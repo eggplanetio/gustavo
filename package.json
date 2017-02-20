@@ -5,7 +5,7 @@
   "author": "Brian Gonzalez <me@briangonzalez.org>",
   "private": true,
   "bin" : {
-    "nuxstory" : "./bin/nuxstory.js"
+    "nuxstory" : "./server.js"
   },
   "scripts": {
     "dev": "nodemon --exec babel-node -w server.js -w nuxt.config.js -w api/ server.js",

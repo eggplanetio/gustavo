@@ -2,6 +2,7 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  srcDir: __dirname,
   head: {
     title: 'starter',
     meta: [

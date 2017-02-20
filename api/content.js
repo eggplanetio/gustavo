@@ -2,9 +2,17 @@ const path = require('path')
 const router = require('express').Router()
 const requestProxy = require('express-request-proxy')
 
-const config = path.join(process.cwd() || require('nuxtstory.config'))
-const githubToken = process.env.GITHUB_TOKEN || config.githubToken
-const gistId = process.env.GIST_ID || config.gistId
+let config
+
+try {
+  config = require(path.join(process.cwd(), './nuxstory.config'))
+} catch (error) {
+  console.log('No nuxstory.config.js file found in current directory, falling back to env')
+  config = {}
+}
+
+const githubToken = config.githubToken || process.env.GITHUB_TOKEN
+const gistId = config.gistId || process.env.GIST_ID
 
 const opts = {
   url: `https://api.github.com/gists/${gistId}`
