@@ -1,0 +1,26 @@
+<template>
+  <header>
+    <h1>
+      nuxstory
+    </h1>
+
+    <ul>
+      <li v-for="link in links">
+        <header-link :link="link"/>
+      </li>
+    </ul>
+
+  </header>
+</template>
+
+<script>
+import { mapGetters } from 'vuex'
+import HeaderLink from '~/components/site/HeaderLink';
+
+export default {
+  components: { HeaderLink },
+  computed: {
+    ...mapGetters([ 'links' ])
+  }
+}
+</script>
