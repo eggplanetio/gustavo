@@ -5,7 +5,7 @@
   "author": "Brian Gonzalez <me@briangonzalez.org>",
   "private": true,
   "bin" : {
-    "nuxstory" : "./server.js"
+    "nuxstory" : "./bin/nuxstory.js"
   },
   "scripts": {
     "dev": "nodemon --exec babel-node -w server.js -w nuxt.config.js -w api/ server.js",
@@ -26,10 +26,10 @@
     "express": "^4.14.0",
     "express-request-proxy": "^2.0.0",
     "nuxt": "latest",
-    "showdown": "^1.6.4"
+    "showdown": "^1.6.4",
+    "babel-cli": "^6.22.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
     "babel-eslint": "^7.1.1",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-stage-2": "^6.22.0",
