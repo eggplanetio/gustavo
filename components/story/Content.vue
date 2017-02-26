@@ -1,10 +1,15 @@
 <template lang="html">
-  <div v-html="this.$options.filters.markdown(content)">
+  <div>
+    <div v-html="story.content">
+    </div>
+    <date>{{ story.meta.date | moment("MMM D YYYY") }}</date>
   </div>
 </template>
 
 <script>
 export default {
-  props: [ 'content' ],
+  props: [
+    'story',
+  ],
 }
 </script>

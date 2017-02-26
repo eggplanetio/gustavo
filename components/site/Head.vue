@@ -1,5 +1,6 @@
 <template>
-  <span v-if="false"></span>
+  <span v-if="false">
+  </span>
 </template>
 
 <script>
@@ -15,6 +16,9 @@ export default {
       { name: 'twitter:description', content: 'Nuxt.js lets you handle custom headers for your app with vue-meta' },
       { name: 'twitter:image', content: 'https://avatars0.githubusercontent.com/u/23360933?v=3' },
       { name: 'twitter:image:alt', content: 'Nuxt.js logo' }
+    ],
+    link: [
+      { href: "https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i|Inconsolata", rel: 'stylesheet' }
     ]
   }
 }

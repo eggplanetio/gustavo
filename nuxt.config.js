@@ -4,7 +4,7 @@ module.exports = {
   */
   srcDir: __dirname,
   head: {
-    title: 'starter',
+    title: 'nuxstory',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,7 +17,13 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~assets/css/main.css'],
+  css: [
+    'normalize.css',
+    { src: '~assets/css/main.scss', lang: 'scss' }
+  ],
   loading: { color: '#000' },
-  plugins: ['~plugins/vue-nuxstory-filters']
+  plugins: [
+    '~plugins/vue-nuxstory-filters',
+    '~plugins/vue-moment'
+  ]
 }

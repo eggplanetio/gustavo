@@ -1,7 +1,7 @@
 
 <template lang="html">
   <div class="">
-    <story-content :content="currentStory.content" />
+    <story-content :story="currentStory" />
   </div>
 </template>
 
@@ -19,16 +19,17 @@ export default {
     return { host };
   },
 
-  async fetch ({ store, params }) {
+  async fetch ({ store, params, redirect }) {
     store.commit('setHost', host);
 
     let { data } = await axios.get(store.getters.contentUrl);
     const files = Object.values(data.files);
     store.commit('setFiles', files);
 
-    const currentStory = store.state.files
-      .find(file => file.filename.split('.story')[0] === params.id);
+    const currentStory = store.getters.storiesParsed
+      .find(story => story.id === params.id);
 
+    if (!currentStory) return redirect('/')
     store.commit('setCurrentStory', currentStory);
   },
 

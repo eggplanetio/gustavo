@@ -1,10 +1,11 @@
 <template lang="html">
-  <li class="">
-    <div v-html="this.$options.filters.markdown(story.content)">
-    </div>
-
+  <li class="story-item">
     <nuxt-link :to="to">
-      Read
+      {{ story.title }}
+
+      <date>
+        {{ story.meta.date | moment("MMM D YYYY") }}
+      </date>
     </nuxt-link>
   </li>
 </template>
@@ -14,12 +15,26 @@ export default {
   props: ['story'],
   computed: {
     to () {
-      const segment = this.story.filename.split('.story')[0];
-      return `/story/${segment}`;
+      return this.story.path
     }
   }
 }
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
+@import "~assets/css/_settings.scss";
+
+.story-item {
+  margin-bottom: $size-unit;
+  list-style-type: none;
+  padding: 0;
+
+  a { text-decoration: none; }
+}
+</style>
+
+<style lang="scss">
+.story-item p {
+  display: none;
+}
 </style>

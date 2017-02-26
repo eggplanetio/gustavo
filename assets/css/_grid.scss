@@ -1,0 +1,21 @@
+// <div class="flex-grid">
+//   <div class="col"></div>
+//   <div class="col"></div>
+//   <div class="col"></div>
+// </div>
+
+.flex-grid {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-grid-thirds .col {
+  width: 32%;
+}

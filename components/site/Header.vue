@@ -1,14 +1,17 @@
 <template>
   <header>
-    <h1>
-      nuxstory
-    </h1>
+    <!--<h1>
+      <nuxt-link to='/'>
+        nuxstory
+      </nuxt-link>
 
-    <ul>
+    </h1>-->
+
+    <!--<ul>
       <li v-for="link in links">
         <header-link :link="link"/>
       </li>
-    </ul>
+    </ul>-->
 
   </header>
 </template>

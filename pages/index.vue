@@ -1,8 +1,8 @@
 
 <template lang="html">
-  <ul>
-    <template v-for="story in stories">
-      <story-item :story="story">
+  <ul class="story-items">
+    <template v-for="story in storiesParsed">
+      <story-item :story="story"/>
     </template>
   </ul>
 </template>
@@ -30,7 +30,13 @@ export default {
   },
 
   computed: {
-    ...mapGetters([ 'stories' ])
+    ...mapGetters([ 'storiesParsed' ])
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.story-items {
+  padding: 0;
+}
+</style>
