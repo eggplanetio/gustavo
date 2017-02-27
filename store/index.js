@@ -1,28 +1,43 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import showdown from 'showdown'
-const converter = new showdown.Converter()
-const cheerio = require('cheerio')
-
+import axios from 'axios'
+import storyParser from './story-parser'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
 
   state: {
-    currentStory: '',
-    files: [],
+    currentStory: {},
+    stories: [],
+    links: [],
     host: ''
   },
 
   mutations: {
-    setCurrentStory (state, story) {
-      state.currentStory = story
+    setCurrentStoryFromID (state, id) {
+      state.currentStory = state.stories.find(s => s.id === id)
     },
-    setFiles (state, files) {
-      state.files = files
+    setCurrentStoryFromFilesAndID (state, data) {
+      state.currentStory = storyParser.parseStories(data.files)
+        .find(s => s.id === data.id)
+    },
+    setStoriesFromFiles (state, files) {
+      state.stories = storyParser.parseStories(files)
     },
     setHost (state, host) {
       if (host) state.host = host
+    },
+    setLinksFromFiles (state, files) {
+      const linkFile = (files || []).find(file => file.filename === 'links.txt')
+
+      if (linkFile) {
+        state.links = linkFile
+        .content
+        .split('\n')
+        .filter(link => link)
+        .map(link => link.split(' '))
+        .map(link => { return { href: link[1], text: link[0] } })
+      }
     }
   },
 
@@ -35,46 +50,7 @@ const store = new Vuex.Store({
   },
 
   getters: {
-    contentUrl: state => `http://${state.host}/api/content`,
-    stories: state => state.files.filter(file => file.filename.includes('.story')),
-    storiesParsed (state) {
-      return state.files
-        .filter(file => file.filename.includes('.story'))
-        .map(raw => {
-          const content = converter.makeHtml(raw.content)
-          const $ = cheerio.load(content)
-          const meta = {}
-          $('meta').each((e, el) => {
-            meta[el.attribs.name] = el.attribs.content
-          })
-
-          const title = $('h1').text()
-          const segment = raw.filename.split('.story')[0]
-          const path = `/story/${segment}`
-          const id = raw.filename.split('.story')[0]
-
-          return {
-            id,
-            title,
-            content,
-            path,
-            meta
-          }
-        })
-        .sort((current, other) => new Date(other.meta.date) - new Date(current.meta.date))
-    },
-    links (state) {
-      const linkFile = state.files.find(file => file.filename === 'links.txt')
-
-      if (linkFile) {
-        return linkFile
-        .content
-        .split('\n')
-        .filter(link => link)
-        .map(link => link.split(' '))
-        .map(link => { return { href: link[1], text: link[0] } })
-      }
-    }
+    contentUrl: state => `http://${state.host}/api/content`
   }
 
 })

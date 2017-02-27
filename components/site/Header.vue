@@ -4,7 +4,6 @@
       <nuxt-link to='/'>
         nuxstory
       </nuxt-link>
-
     </h1>-->
 
     <!--<ul>
@@ -12,18 +11,17 @@
         <header-link :link="link"/>
       </li>
     </ul>-->
-
   </header>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 import HeaderLink from '~/components/site/HeaderLink';
 
 export default {
   components: { HeaderLink },
   computed: {
-    ...mapGetters([ 'links' ])
+    ...mapState([ 'links' ])
   }
 }
 </script>

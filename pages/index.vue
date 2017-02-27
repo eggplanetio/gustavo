@@ -1,7 +1,7 @@
 
 <template lang="html">
   <ul class="story-items">
-    <template v-for="story in storiesParsed">
+    <template v-for="story in stories">
       <story-item :story="story"/>
     </template>
   </ul>
@@ -10,7 +10,7 @@
 <script>
 import axios from 'axios';
 import StoryItem from '~components/stories/Item.vue';
-import { mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 let host;
 
 export default {
@@ -22,15 +22,16 @@ export default {
   },
 
   async fetch ({ store, params }) {
-    store.commit('setHost', host);
+    store.commit('setHost', host)
 
-    let { data } = await axios.get(store.getters.contentUrl);
-    const files = Object.values(data.files);
-    store.commit('setFiles', files);
+    let { data } = await axios.get(store.getters.contentUrl)
+    const files = Object.values(data.files)
+    store.commit('setLinksFromFiles', files)
+    store.commit('setStoriesFromFiles', files)
   },
 
   computed: {
-    ...mapGetters([ 'storiesParsed' ])
+    ...mapState([ 'stories' ])
   }
 }
 </script>

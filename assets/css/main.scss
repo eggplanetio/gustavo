@@ -32,15 +32,19 @@ p {
   margin-bottom: $size-unit;
 }
 
-h1 {
+h1, h2, h3, h4 {
   font-size: $font-size;
   font-weight: normal;
   margin-top: 0;
   text-decoration: underline;
 }
 
+main h2 {
+  margin-top: $size-unit * 2;
+}
+
 date {
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 ul {
@@ -52,4 +56,27 @@ a:hover,
 a:visited,
 a:active {
   color: black
+}
+
+main ul {
+  li {
+    margin-bottom: $size-unit;
+  }
+}
+
+pre {
+  border: 1px dashed black;
+  overflow-x: scroll;
+  padding: $size-unit;
+}
+
+code {
+  font-size: 80%;
+}
+
+h1,
+h2,
+p,
+li {
+  code { background: #efefef; }
 }

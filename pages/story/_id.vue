@@ -22,15 +22,18 @@ export default {
   async fetch ({ store, params, redirect }) {
     store.commit('setHost', host);
 
+    store.commit('setCurrentStoryFromID', params.id)
+    let currentStory = store.state.currentStory
+    if (currentStory) return currentStory;
+
     let { data } = await axios.get(store.getters.contentUrl);
     const files = Object.values(data.files);
-    store.commit('setFiles', files);
-
-    const currentStory = store.getters.storiesParsed
-      .find(story => story.id === params.id);
+    store.commit('setLinksFromFiles', files)
+    store.commit('setCurrentStoryFromFilesAndID', { files, id: params.id })
+    currentStory = store.state.currentStory
 
     if (!currentStory) return redirect('/')
-    store.commit('setCurrentStory', currentStory);
+    return currentStory;
   },
 
   computed: {
