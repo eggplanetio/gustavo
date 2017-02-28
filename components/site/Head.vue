@@ -18,7 +18,7 @@ export default {
       { name: 'twitter:image:alt', content: 'Nuxt.js logo' }
     ],
     link: [
-      { href: "https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i|Inconsolata", rel: 'stylesheet' }
+      { href: "https://fonts.googleapis.com/css?family=Inconsolata", rel: 'stylesheet' }
     ]
   }
 }

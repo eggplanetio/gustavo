@@ -36,7 +36,9 @@ h1, h2, h3, h4 {
   font-size: $font-size;
   font-weight: normal;
   margin-top: 0;
-  text-decoration: underline;
+  position: relative;
+
+  a { text-decoration: none; }
 }
 
 main h2 {
@@ -65,7 +67,7 @@ main ul {
 }
 
 pre {
-  border: 1px dashed black;
+  background: #f6f6f6;
   overflow-x: scroll;
   padding: $size-unit;
 }

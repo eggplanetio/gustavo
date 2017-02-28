@@ -1,8 +1,7 @@
 <template lang="html">
   <li class="story-item">
     <nuxt-link :to="to">
-      {{ story.title }}
-
+      {{ story.meta.title }}
       <date>
         {{ story.meta.date | moment("MMM D YYYY") }}
       </date>

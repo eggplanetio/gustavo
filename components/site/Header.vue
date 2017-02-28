@@ -1,12 +1,10 @@
 <template>
   <header>
     <!--<h1>
-      <nuxt-link to='/'>
-        nuxstory
-      </nuxt-link>
-    </h1>-->
+      <nuxt-link to='/'>△</nuxt-link>
+    </h1>
 
-    <!--<ul>
+    <ul>
       <li v-for="link in links">
         <header-link :link="link"/>
       </li>
