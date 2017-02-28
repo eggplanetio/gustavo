@@ -1,9 +1,9 @@
 <template lang="html">
-  <li class="story-item">
+  <li class="post-item">
     <nuxt-link :to="to">
-      {{ story.meta.title }}
+      {{ post.meta.title }}
       <date>
-        {{ story.meta.date | moment("MMM D YYYY") }}
+        {{ post.meta.date | moment("MMM D YYYY") }}
       </date>
     </nuxt-link>
   </li>
@@ -11,10 +11,10 @@
 
 <script>
 export default {
-  props: ['story'],
+  props: ['post'],
   computed: {
     to () {
-      return this.story.path
+      return this.post.path
     }
   }
 }
@@ -23,7 +23,7 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/css/_settings.scss";
 
-.story-item {
+.post-item {
   margin-bottom: $size-unit;
   list-style-type: none;
   padding: 0;
@@ -33,7 +33,7 @@ export default {
 </style>
 
 <style lang="scss">
-.story-item p {
+.post-item p {
   display: none;
 }
 </style>

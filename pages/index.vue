@@ -1,20 +1,20 @@
 
 <template lang="html">
-  <ul class="story-items">
-    <template v-for="story in stories">
-      <story-item :story="story"/>
+  <ul class="post-items">
+    <template v-for="post in posts">
+      <post-item :post="post"/>
     </template>
   </ul>
 </template>
 
 <script>
 import axios from 'axios';
-import StoryItem from '~components/stories/Item.vue';
+import PostItem from '~components/posts/Item.vue';
 import { mapState } from 'vuex'
 let host;
 
 export default {
-  components: { StoryItem },
+  components: { PostItem },
 
   data(context) {
     host = context.req && context.req.headers.host;
@@ -27,17 +27,17 @@ export default {
     let { data } = await axios.get(store.getters.contentUrl)
     const files = Object.values(data.files)
     store.commit('setLinksFromFiles', files)
-    store.commit('setStoriesFromFiles', files)
+    store.commit('setPostsFromFiles', files)
   },
 
   computed: {
-    ...mapState([ 'stories' ])
+    ...mapState([ 'posts' ])
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.story-items {
+.post-items {
   padding: 0;
 }
 </style>

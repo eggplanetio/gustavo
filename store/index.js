@@ -8,26 +8,26 @@ const store = new Vuex.Store({
 
   state: {
     currentPage: {},
-    currentStory: {},
-    stories: [],
+    currentPost: {},
+    posts: [],
     links: [],
     host: ''
   },
 
   mutations: {
-    setCurrentStoryFromID (state, id) {
-      state.currentStory = state.stories.find(s => s.id === id)
+    setcurrentPostFromID (state, id) {
+      state.currentPost = state.posts.find(s => s.id === id)
     },
-    setCurrentStoryFromFilesAndID (state, data) {
-      state.currentStory = parser.parseStories(data.files)
+    setcurrentPostFromFilesAndID (state, data) {
+      state.currentPost = parser.parsePosts(data.files)
         .find(s => s.id === data.id)
     },
     setCurrentPageFromFilesAndID (state, data) {
       state.currentPage = parser.parsePages(data.files)
         .find(s => s.id === data.id)
     },
-    setStoriesFromFiles (state, files) {
-      state.stories = parser.parseStories(files)
+    setPostsFromFiles (state, files) {
+      state.posts = parser.parsePosts(files)
     },
     setHost (state, host) {
       if (host) state.host = host

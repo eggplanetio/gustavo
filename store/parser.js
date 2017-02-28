@@ -13,7 +13,7 @@ export default {
 
     const title = $('h1').text()
     const segment = raw.filename.split(split)[0]
-    const path = `/story/${segment}`
+    const path = `/post/${segment}`
     const id = raw.filename.split(split)[0]
 
     return {
@@ -25,10 +25,10 @@ export default {
     }
   },
 
-  parseStories (files) {
+  parsePosts (files) {
     return files
-    .filter(file => file.filename.includes('.story.md'))
-    .map(raw => this.parseItem(raw, '.story'))
+    .filter(file => file.filename.includes('.post.md'))
+    .map(raw => this.parseItem(raw, '.post'))
     .sort((current, other) => new Date(other.meta.date) - new Date(current.meta.date))
   },
 

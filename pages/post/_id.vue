@@ -1,18 +1,18 @@
 
 <template lang="html">
   <div class="">
-    <story-content :story="currentStory" />
+    <post-content :post="currentPost" />
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import StoryContent from '~components/story/Content.vue';
+import postContent from '~components/post/Content.vue';
 import { mapState } from 'vuex'
 let host;
 
 export default {
-  components: { StoryContent },
+  components: { postContent },
 
   data(context) {
     host = context.req && context.req.headers.host;
@@ -22,22 +22,22 @@ export default {
   async fetch ({ store, params, redirect }) {
     store.commit('setHost', host);
 
-    store.commit('setCurrentStoryFromID', params.id)
-    let currentStory = store.state.currentStory
-    if (currentStory) return currentStory;
+    store.commit('setcurrentPostFromID', params.id)
+    let currentPost = store.state.currentPost
+    if (currentPost) return currentPost;
 
     let { data } = await axios.get(store.getters.contentUrl);
     const files = Object.values(data.files);
     store.commit('setLinksFromFiles', files)
-    store.commit('setCurrentStoryFromFilesAndID', { files, id: params.id })
-    currentStory = store.state.currentStory
+    store.commit('setcurrentPostFromFilesAndID', { files, id: params.id })
+    currentPost = store.state.currentPost
 
-    if (!currentStory) return redirect('/')
-    return currentStory;
+    if (!currentPost) return redirect('/')
+    return currentPost;
   },
 
   computed: {
-    ...mapState([ 'currentStory' ])
+    ...mapState([ 'currentPost' ])
   }
 }
 </script>
