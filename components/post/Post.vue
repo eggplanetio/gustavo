@@ -1,4 +1,4 @@
-<!--<template lang="html">
+<template lang="html">
   <div>
     <h1>
       {{ post.meta.title }}
@@ -7,20 +7,14 @@
     <div v-html="post.content">
     </div>
   </div>
-</template>-->
+</template>
 
 <script>
+import postContent from '~components/post/Content.vue'
 export default {
-
-  // render () {
-  //   return this.content;
-  // },
-  template () {
-    return this.content;
-  },
-
+  components: { postContent },
   props: [
-    'content',
+    'post',
   ],
 }
 </script>

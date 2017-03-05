@@ -1,18 +1,18 @@
 
 <template lang="html">
   <div class="">
-    <post-content :post="currentPost" />
+    <post :post="currentPost" />
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import postContent from '~components/post/Content.vue';
+import post from '~components/post/Post.vue';
 import { mapState } from 'vuex'
 let host;
 
 export default {
-  components: { postContent },
+  components: { post },
 
   data(context) {
     host = context.req && context.req.headers.host;

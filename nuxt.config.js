@@ -1,10 +1,14 @@
 module.exports = {
-  /*
-  ** Headers of the page
-  */
+  build: {
+    extend (config, { isDev, isClient }) {
+      if (!config.externals) return
+      config.externals = config.externals.filter(p => p !== 'xmldom')
+    }
+  },
+
   srcDir: __dirname,
   head: {
-    title: 'nuxstory',
+    title: 'gus',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -23,7 +27,7 @@ module.exports = {
   ],
   loading: { color: '#000' },
   plugins: [
-    '~plugins/vue-nuxstory-filters',
+    '~plugins/vue-hljs',
     '~plugins/vue-moment'
   ]
 }

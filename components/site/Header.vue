@@ -1,6 +1,6 @@
 <template>
   <header>
-    <!--<h1>
+    <h1>
       <nuxt-link to='/'>△</nuxt-link>
     </h1>
 
@@ -8,7 +8,7 @@
       <li v-for="link in links">
         <header-link :link="link"/>
       </li>
-    </ul>-->
+    </ul>
   </header>
 </template>
 

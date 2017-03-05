@@ -1,16 +1,15 @@
 {
-  "name": "nuxstory",
+  "name": "gus",
   "version": "0.0.1",
   "description": "Nuxt.js project",
   "author": "Brian Gonzalez <me@briangonzalez.org>",
   "private": true,
   "bin": {
-    "nuxstory": "./bin/nuxstory.js"
+    "gus": "./bin/gus.js"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node -w server.js -w nuxt.config.js -w api/ server.js",
-    "build": "nuxt build && babel server.js --out-file server.prod.js",
-    "start": "cross-env NODE_ENV=production node server.prod.js",
+    "dev": "nodemon --exec node server.js -w nuxt.config.js -w api/ server.js",
+    "start": "NODE_ENV=production node server.js",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
@@ -23,16 +22,18 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-cli": "^6.22.2",
-    "cheerio": "^0.22.0",
     "cross-env": "^3.1.4",
     "express": "^4.14.0",
     "express-request-proxy": "^2.0.0",
+    "html-element": "^2.2.0",
     "node-sass": "^4.5.0",
     "normalize.css": "^5.0.0",
     "nuxt": "latest",
     "sass-loader": "^4.1.1",
     "showdown": "^1.6.4",
-    "vue-moment": "^2.0.2"
+    "vue-highlightjs": "^1.1.0",
+    "vue-moment": "^2.0.2",
+    "xmldom": "^0.1.27"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

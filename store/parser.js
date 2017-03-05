@@ -1,24 +1,35 @@
 import showdown from 'showdown'
+import { DOMParser } from 'xmldom'
 const converter = new showdown.Converter()
-const cheerio = require('cheerio')
+
+const getDocument = (html) => {
+  if (process.BROWSER_BUILD) {
+    const div = document.createElement('div')
+    div.innerHTML = html
+    return div
+  } else {
+    return new DOMParser().parseFromString(html)
+  }
+}
 
 export default {
   parseItem (raw, split) {
-    const content = converter.makeHtml(raw.content)
-    const $ = cheerio.load(content)
+    let content = converter.makeHtml(raw.content)
+    const doc = getDocument(content)
+
     const meta = {}
-    $('meta').each((e, el) => {
-      meta[el.attribs.name] = el.attribs.content
+    const metaNodes = Array.from(doc.getElementsByTagName('meta'))
+    metaNodes.forEach(node => {
+      meta[node.getAttribute('name')] = node.getAttribute('content')
     })
 
-    const title = $('h1').text()
     const segment = raw.filename.split(split)[0]
     const path = `/post/${segment}`
     const id = raw.filename.split(split)[0]
+    content = content.replace(/<pre>/g, '<pre v-highlightjs="sourcecode">')
 
     return {
       id,
-      title,
       content,
       path,
       meta
