@@ -1,7 +1,7 @@
 <template>
   <div>
     <site-head/>
-    <site-header/>
+    <site-nav/>
     <main>
       <nuxt/>
     </main>
@@ -11,13 +11,13 @@
 
 <script>
 import SiteHead from '~components/site/Head.vue'
-import SiteHeader from '~components/site/Header.vue'
+import SiteNav from '~components/site/Nav.vue'
 import SiteFooter from '~components/site/Footer.vue'
 
 export default {
   components: {
     SiteHead,
-    SiteHeader,
+    SiteNav,
     SiteFooter
   },
 

@@ -25,5 +25,8 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+a {
+  text-decoration: none;
+}
 </style>

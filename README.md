@@ -23,6 +23,10 @@ npm run dev   # development
 npm start     # production
 ```
 
+### Deployment
+
+Deploying Gus is simple.
+
 ### License
 
 MIT

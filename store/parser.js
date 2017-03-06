@@ -1,21 +1,21 @@
 import showdown from 'showdown'
-import { DOMParser } from 'xmldom'
 const converter = new showdown.Converter()
 
-const getDocument = (html) => {
-  if (process.BROWSER_BUILD) {
-    const div = document.createElement('div')
-    div.innerHTML = html
-    return div
-  } else {
-    return new DOMParser().parseFromString(html)
-  }
+let Parser
+if (typeof DOMParser === 'undefined') {
+  Parser = require('xmldom').DOMParser
+} else {
+  Parser = DOMParser
+}
+
+const makeDOM = (html) => {
+  return new Parser().parseFromString(html, 'text/html')
 }
 
 export default {
   parseItem (raw, split) {
     let content = converter.makeHtml(raw.content)
-    const doc = getDocument(content)
+    const doc = makeDOM(content)
 
     const meta = {}
     const metaNodes = Array.from(doc.getElementsByTagName('meta'))
