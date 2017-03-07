@@ -1,11 +1,12 @@
+const webpack = require('webpack')
+
 module.exports = {
   build: {
-    extend (config, { isDev, isClient }) {
-      if (!config.externals) return
-      config.externals = config.externals.filter(p => p !== 'xmldom')
-    }
+    plugins: [
+      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr|hu/),
+      new webpack.IgnorePlugin(/xmldom$/)
+    ]
   },
-
   srcDir: __dirname,
   head: {
     title: 'gus',
@@ -27,7 +28,7 @@ module.exports = {
   ],
   loading: { color: '#000' },
   plugins: [
-    '~plugins/vue-hljs',
+    // '~plugins/vue-hljs',
     '~plugins/vue-moment'
   ]
 }
