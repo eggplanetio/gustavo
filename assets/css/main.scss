@@ -39,7 +39,14 @@ h1, h2, h3, h4 {
   position: relative;
 
   a { text-decoration: none; }
+  &:before {
+    color: $color-heading-hash;
+    font-style: italic;
+  }
 }
+
+h2:before { content: '## ' }
+h3:before { content: '### ' }
 
 main h2 {
   margin-top: $size-unit * 2;
@@ -57,8 +64,14 @@ a,
 a:hover,
 a:visited,
 a:active {
-  color: black
+  color: black;
+
+  main & {
+    border-bottom: 1px solid $color-border;
+  }
+
 }
+
 
 main ul {
   li {
@@ -81,5 +94,12 @@ h1,
 h2,
 p,
 li {
-  code { background: #efefef; }
+  code { background: $color-code; }
+}
+
+table {
+  tr td {
+    border-bottom: 1px solid $color-border;
+    padding: $size-unit
+  }
 }

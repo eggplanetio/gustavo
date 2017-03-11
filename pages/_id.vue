@@ -24,6 +24,7 @@ export default {
     store.commit('setHost', host)
     let { data } = await axios.get(store.getters.contentUrl)
     const files = Object.values(data.files)
+    store.commit('setLinksFromFiles', files)
     store.commit('setCurrentPageFromFilesAndID', { files, id: params.id })
   },
 

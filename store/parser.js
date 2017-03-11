@@ -1,8 +1,10 @@
 import showdown from 'showdown'
-const converter = new showdown.Converter()
+const converter = new showdown.Converter({
+  tables: true
+})
 
 let Parser
-if (typeof DOMParser === 'undefined') {
+if (process.SERVER_BUILD) {
   Parser = require('xmldom').DOMParser
 } else {
   Parser = DOMParser

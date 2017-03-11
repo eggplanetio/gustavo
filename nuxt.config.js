@@ -3,8 +3,8 @@ const webpack = require('webpack')
 module.exports = {
   build: {
     plugins: [
-      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr|hu/),
-      new webpack.IgnorePlugin(/xmldom$/)
+      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr|hu/)
+      // new webpack.IgnorePlugin(/xmldom$/)
     ]
   },
   srcDir: __dirname,

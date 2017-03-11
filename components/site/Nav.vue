@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <a @click="toggle" v-if="hidden">=</a>
-    <a @click="toggle" v-else>×</a>
+    <a @click="toggle" class="toggle" v-if="hidden">=</a>
+    <a @click="toggle" class="toggle" v-else>×</a>
 
     <ul v-if="!hidden">
       <li v-for="link in links">
@@ -46,13 +46,17 @@ nav {
   right: $size-unit;
   text-align: right;
   background: white;
-  z-index: 10;
+  user-select: none;
 }
 
 a {
   cursor: pointer;
   position: relative;
-  z-index: 10;
+  z-index: 11;
+
+  &.toggle {
+    margin-right: $size-unit/3;
+  }
 }
 
 ul {
@@ -63,6 +67,7 @@ ul {
   background: white;
   position: relative;
   z-index: 10;
+  transform: translateY($size-unit* -1.25);
 
   li {
     margin-bottom: $size-unit/4;
