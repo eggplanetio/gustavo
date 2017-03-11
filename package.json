@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "nodemon --exec node server.js -w nuxt.config.js -w api/ server.js",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production nuxt build && node server.js",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
