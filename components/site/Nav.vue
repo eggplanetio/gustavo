@@ -45,7 +45,7 @@ nav {
   top: $size-unit;
   right: $size-unit;
   text-align: right;
-  background: white;
+  background: $color-background;
   user-select: none;
 }
 
@@ -60,11 +60,11 @@ a {
 }
 
 ul {
-  border: 1px solid black;
+  border: 1px solid $color-font;
   list-style-type: none;
   padding: $size-unit;
   padding-left: $size-unit * 3;
-  background: white;
+  background: $color-background;
   position: relative;
   z-index: 10;
   transform: translateY($size-unit* -1.25);

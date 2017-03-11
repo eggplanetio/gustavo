@@ -3,8 +3,12 @@ $size-unit: 1rem;
 $font-size: 0.9rem;
 
 // Colors.
-$color-light: #eee;
+$color-light: #fdf2d6;
+$color-gray: #eee;
+$color-dark: #482878;
 
-$color-border: $color-light;
-$color-code: $color-light;
-$color-heading-hash: $color-light;
+$color-background: $color-light;
+$color-font: $color-dark;
+$color-border: $color-dark;
+$color-code: $color-gray;
+$color-heading-hash: $color-gray;

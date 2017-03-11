@@ -10,6 +10,7 @@ html {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: $color-background;
 }
 
 body {
@@ -20,6 +21,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  color: $color-font;
 }
 
 main {
@@ -64,7 +66,7 @@ a,
 a:hover,
 a:visited,
 a:active {
-  color: black;
+  color: $color-font;
 
   main & {
     border-bottom: 1px solid $color-border;

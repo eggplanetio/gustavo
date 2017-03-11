@@ -9,7 +9,7 @@ module.exports = {
   },
   srcDir: __dirname,
   head: {
-    title: 'gus',
+    title: 'eggplanet',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -26,7 +26,7 @@ module.exports = {
     'normalize.css',
     { src: '~assets/css/main.scss', lang: 'scss' }
   ],
-  loading: { color: '#000' },
+  loading: { color: '#ac48c0' },
   plugins: [
     // '~plugins/vue-hljs',
     '~plugins/vue-moment'

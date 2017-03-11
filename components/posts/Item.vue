@@ -28,12 +28,9 @@ export default {
   list-style-type: none;
   padding: 0;
 
-  a { text-decoration: none; }
-}
-</style>
-
-<style lang="scss">
-.post-item p {
-  display: none;
+  a {
+    text-decoration: none;
+    border: none;
+  }
 }
 </style>
