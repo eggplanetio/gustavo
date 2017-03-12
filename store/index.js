@@ -14,25 +14,47 @@ const store = new Vuex.Store({
     host: ''
   },
 
+  actions: {
+    async FETCH_PAGE ({ dispatch, commit }, id) {
+      let { data } = await axios.get(store.getters.contentUrl)
+      const files = Object.values(data.files)
+      commit('SET_LINKS_FROM_FILES', files)
+      commit('SET_CURRENT_PAGE_FROM_FILE_AND_ID', { files, id })
+    },
+    async FETCH_POST ({ commit }, id) {
+      commit('SET_CURRENT_POST_FROM_ID', id)
+      let currentPost = store.state.currentPost
+      if (currentPost) return
+
+      let { data } = await axios.get(store.getters.contentUrl)
+      const files = Object.values(data.files)
+      commit('SET_LINKS_FROM_FILES', files)
+      commit('SET_CURRENT_POST_FROM_FILE_AND_ID', { files, id })
+    },
+    async FETCH_POSTS ({ commit }) {
+      let { data } = await axios.get(store.getters.contentUrl)
+      const files = Object.values(data.files)
+      commit('SET_LINKS_FROM_FILES', files)
+      commit('SET_POSTS_FROM_FILES', files)
+    }
+  },
+
   mutations: {
-    setcurrentPostFromID (state, id) {
+    SET_CURRENT_POST_FROM_ID (state, id) {
       state.currentPost = state.posts.find(s => s.id === id)
     },
-    setcurrentPostFromFilesAndID (state, data) {
+    SET_CURRENT_POST_FROM_FILE_AND_ID (state, data) {
       state.currentPost = parser.parsePosts(data.files)
         .find(s => s.id === data.id)
     },
-    setCurrentPageFromFilesAndID (state, data) {
+    SET_CURRENT_PAGE_FROM_FILE_AND_ID (state, data) {
       state.currentPage = parser.parsePages(data.files)
         .find(s => s.id === data.id)
     },
-    setPostsFromFiles (state, files) {
+    SET_POSTS_FROM_FILES (state, files) {
       state.posts = parser.parsePosts(files)
     },
-    setHost (state, host) {
-      if (host) state.host = host
-    },
-    setLinksFromFiles (state, files) {
+    SET_LINKS_FROM_FILES (state, files) {
       const linkFile = (files || []).find(file => file.filename === 'links.txt')
 
       if (linkFile) {
@@ -46,16 +68,16 @@ const store = new Vuex.Store({
     }
   },
 
-  actions: {
-    async fetchFiles ({ commit }, url) {
-      let { data } = await axios.get(url)
-      const files = Object.values(data.files)
-      commit('setFiles', files)
-    }
-  },
-
   getters: {
-    contentUrl: state => `http://${state.host}/api/content`
+    contentUrl: state => {
+      let host
+      if (process.SERVER_BUILD) {
+        host = `http://0.0.0.0:${process.env.runningPort}`
+      } else {
+        host = `//${window.location.host}`
+      }
+      return `${host}/api/content`
+    }
   }
 
 })

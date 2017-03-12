@@ -10,22 +10,13 @@
 </template>
 
 <script>
+import store from '~store';
 import axios from 'axios';
 import { mapState } from 'vuex'
-let host;
 
 export default {
-  data(context) {
-    host = context.req && context.req.headers.host;
-    return { host };
-  },
-
   async fetch ({ store, params }) {
-    store.commit('setHost', host)
-    let { data } = await axios.get(store.getters.contentUrl)
-    const files = Object.values(data.files)
-    store.commit('setLinksFromFiles', files)
-    store.commit('setCurrentPageFromFilesAndID', { files, id: params.id })
+    await store.dispatch('FETCH_PAGE', params.id);
   },
 
   computed: {

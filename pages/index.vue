@@ -8,26 +8,16 @@
 </template>
 
 <script>
+import store from '~store';
 import axios from 'axios';
 import PostItem from '~components/posts/Item.vue';
 import { mapState } from 'vuex'
-let host;
 
 export default {
   components: { PostItem },
 
-  data(context) {
-    host = context.req && context.req.headers.host;
-    return { host };
-  },
-
   async fetch ({ store, params }) {
-    store.commit('setHost', host)
-
-    let { data } = await axios.get(store.getters.contentUrl)
-    const files = Object.values(data.files)
-    store.commit('setLinksFromFiles', files)
-    store.commit('setPostsFromFiles', files)
+    await store.dispatch('FETCH_POSTS')
   },
 
   computed: {
