@@ -8,8 +8,8 @@
     "gus": "./bin/gus.js"
   },
   "scripts": {
-    "dev": "nodemon --exec node server.js -w nuxt.config.js -w api/ server.js",
-    "start": "NODE_ENV=production nuxt build && node server.js",
+    "dev": "nodemon --exec node server.js -w nuxt.config.js -w api/ -w server.js",
+    "start": "(NODE_ENV=production nuxt build && NODE_ENV=production node server.js)",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
@@ -22,18 +22,20 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-cli": "^6.22.2",
+    "compression": "^1.6.2",
     "cross-env": "^3.1.4",
     "express": "^4.14.0",
     "express-request-proxy": "^2.0.0",
     "html-element": "^2.2.0",
+    "morgan": "^1.8.1",
     "node-sass": "^4.5.0",
     "normalize.css": "^5.0.0",
     "nuxt": "latest",
     "sass-loader": "^4.1.1",
     "showdown": "^1.6.4",
     "vue-highlightjs": "^1.1.0",
-    "xmldom": "^0.1.27",
-    "vue-moment": "^2.0.2"
+    "vue-moment": "^2.0.2",
+    "xmldom": "^0.1.27"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

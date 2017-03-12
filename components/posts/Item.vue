@@ -3,7 +3,7 @@
     <nuxt-link :to="to">
       {{ post.meta.title }}
       <date>
-        {{ post.meta.date | moment("MMM D YYYY") }}
+        {{ post.meta.date | toIsoDate | moment("MMM D YYYY") }}
       </date>
     </nuxt-link>
   </li>

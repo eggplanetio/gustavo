@@ -3,8 +3,7 @@ const webpack = require('webpack')
 module.exports = {
   build: {
     plugins: [
-      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr|hu/)
-      // new webpack.IgnorePlugin(/xmldom$/)
+      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)
     ]
   },
   srcDir: __dirname,
@@ -29,6 +28,7 @@ module.exports = {
   loading: { color: '#ac48c0' },
   plugins: [
     // '~plugins/vue-hljs',
-    '~plugins/vue-moment'
+    '~plugins/vue-moment',
+    '~plugins/to-iso-date'
   ]
 }
