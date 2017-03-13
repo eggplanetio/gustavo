@@ -19,6 +19,12 @@ export default {
     await store.dispatch('FETCH_PAGE', params.id);
   },
 
+  head () {
+    return {
+      title: this.currentPage.meta.title
+    }
+  },
+
   computed: {
     ...mapState([ 'currentPage' ])
   }

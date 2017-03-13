@@ -22,6 +22,12 @@ export default {
     return currentPost;
   },
 
+  head () {
+    return {
+      title: this.currentPost.meta.title
+    }
+  },
+
   computed: {
     ...mapState([ 'currentPost' ])
   }

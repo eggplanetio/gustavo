@@ -28,7 +28,7 @@ module.exports = {
     'normalize.css',
     { src: '~assets/css/main.scss', lang: 'scss' }
   ],
-  loading: { color: '#ac48c0' },
+  loading: { color: 'black' },
   plugins: [
     // '~plugins/vue-hljs',
     '~plugins/vue-moment',
