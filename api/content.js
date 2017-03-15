@@ -11,6 +11,8 @@ try {
   config = {}
 }
 
+console.log(config)
+
 const githubToken = config.githubToken || process.env.GITHUB_TOKEN
 const gistId = config.gistId || process.env.GIST_ID
 
@@ -18,6 +20,7 @@ const opts = {
   url: `https://api.github.com/gists/${gistId}`
 }
 
+console.log(githubToken)
 if (githubToken) {
   opts['headers'] = {
     'Authorization': `token ${githubToken}`

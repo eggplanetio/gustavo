@@ -1,4 +1,4 @@
 module.exports = {
-  githubToken: 'c4499210b8cda8b44d9293c7924e0d023e122acb',
+  githubToken: 'e70a4df210ce629ac853970ad453d58cb74959ac',
   gistId: 'e19043c23706d16e95f416d4db897cdf'
 }
