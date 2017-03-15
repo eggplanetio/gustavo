@@ -51,8 +51,8 @@ now -e GITHUB_TOKEN=@gustavo-github-token -e GIST_ID=@gustavo-gist-id --docker
 
 ### License
 
-MIT
+- MIT
 
 ### Credits
 
-- Icon by [Gus Icon by Awais Rashid Khan from the Noun Project](https://thenounproject.com/search/?q=man+hat&i=31120)
+- [Logo by Awais Rashid Khan from the Noun Project](https://thenounproject.com/search/?q=man+hat&i=31120)
