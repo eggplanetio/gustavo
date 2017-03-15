@@ -2,13 +2,13 @@
 
 > A blogging platform built atop Nuxt & Gist.
 
-### TOC
+### Contents
 
 - [Getting Started](#getting-started)
 - [Running locally](#running-locally)
 - [Deployment](#deployment)
 
-### Getting started
+## Getting started
 
 Step 1, create `gustavo.config.js` with the following:
 
@@ -28,7 +28,7 @@ FROM eggplanet/gustavo:latest
 
 You're all done!
 
-### Running locally
+## Running locally
 
 Now let's start it up:
 
@@ -39,7 +39,7 @@ docker run my-gus-blog --port 3000:3000
 
 Your blog will be running at http://localhost:3000
 
-### Deployment
+## Deployment
 
 Deploying gustavo is simple. Our reccomended method is [Now by Zeit](https://zeit.co/now).
 
