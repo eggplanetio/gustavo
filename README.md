@@ -2,6 +2,12 @@
 
 > A blogging platform built atop Nuxt & Gist.
 
+### TOC
+
+- [Getting Started](#getting-started)
+- [Running locally](#running-locally)
+- [Deployment](#deployment)
+
 ### Getting started
 
 Step 1, create `gustavo.config.js` with the following:
@@ -22,7 +28,7 @@ FROM eggplanet/gustavo:latest
 
 You're all done!
 
-### Running it locally
+### Running locally
 
 Now let's start it up:
 
