@@ -12,7 +12,7 @@
 
 Step 1, create `gustavo.config.js` with the following:
 
-```
+```js
 module.exports = {
   title: 'My gustavo blog',
   githubToken: '<< token >>',
@@ -22,7 +22,7 @@ module.exports = {
 
 Step 2, create a `Dockerfile` with the following:
 
-```
+```docker
 FROM eggplanet/gustavo:latest
 ```
 
@@ -43,7 +43,7 @@ Your blog will be running at http://localhost:3000
 
 Deploying gustavo is simple. Our reccomended method is [Now by Zeit](https://zeit.co/now).
 
-```
+```bash
 now secrets add gustavo-github-token=<TOKEN>
 now secrets add gustavo-gist-id=<ID>
 now -e GITHUB_TOKEN=@gustavo-github-token -e GIST_ID=@gustavo-gist-id --docker
