@@ -1,4 +1,4 @@
-<img src="https://cloud.githubusercontent.com/assets/659829/23951322/ffb6a288-094a-11e7-848b-2806855a04fc.png">
+<img src="https://cloud.githubusercontent.com/assets/659829/23952199/ddf65190-094d-11e7-87cf-e8ff8f498777.png">
 
 > A blogging platform built atop Nuxt & Gist.
 
