@@ -1,10 +1,10 @@
-## gus
+<img src="https://cloud.githubusercontent.com/assets/659829/23951322/ffb6a288-094a-11e7-848b-2806855a04fc.png">
 
 > A blogging platform built atop Nuxt & Gist.
 
 ### Getting started
 
-Create a `gus.config.js` file with the following (or use `ENV` variables):
+Create a `gustavo.config.js` file with the following (or use `ENV` variables):
 
 ```
 module.exports = {
@@ -13,19 +13,15 @@ module.exports = {
 }
 ````
 
-Then startup Gus:
-
-```bash
-export GITHUB_TOKEN=<< token >>
-export GIST_ID=<< gist id >>
-
-npm run dev   # development
-npm start     # production
-```
-
 ### Deployment
 
-Deploying Gus is simple.
+Deploying gustavo is simple. Our reccomended method is Now by Zeit.
+
+```
+now secrets add gustavo-github-token=<TOKEN>
+now secrets add gustavo-gist-id=<ID>
+now -e GITHUB_TOKEN=@gustavo-github-token -e GIST_ID=@gustavo-gist-id --docker
+```
 
 ### License
 

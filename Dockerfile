@@ -6,11 +6,13 @@ ENV NODE_ENV production
 # Create app directory
 RUN mkdir -p /app
 COPY . /app
+ONBUILD COPY . /app
 
 # Copy files.
 WORKDIR /app
 RUN npm install
 RUN ./node_modules/.bin/nuxt build
+ONBUILD RUN ./node_modules/.bin/nuxt build
 
 # Expose the app port
 EXPOSE 3000

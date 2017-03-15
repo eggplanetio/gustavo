@@ -1,12 +1,9 @@
 {
-  "name": "gus",
+  "name": "gustavo",
   "version": "0.0.1",
   "description": "Nuxt.js project",
   "author": "Brian Gonzalez <me@briangonzalez.org>",
   "private": true,
-  "bin": {
-    "gus": "./bin/gus.js"
-  },
   "scripts": {
     "dev": "nodemon --exec node server.js -w nuxt.config.js -w api/ -w server.js",
     "start": "(NODE_ENV=production nuxt build && NODE_ENV=production node server.js)",

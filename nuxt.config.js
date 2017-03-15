@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const gustavoConfig = require('./gustavo.config.js')
 
 module.exports = {
   env: {
@@ -11,11 +12,10 @@ module.exports = {
   },
   srcDir: __dirname,
   head: {
-    title: 'eggplanet',
+    title: gustavoConfig.title,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Another gus-powered blog.' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

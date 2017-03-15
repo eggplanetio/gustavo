@@ -3,9 +3,9 @@ $size-unit: 1rem;
 $font-size: 0.9rem;
 
 // Colors.
-$color-light: white;
-$color-gray: #eee;
-$color-dark: black;
+$color-light: white !default;
+$color-gray: #eee !default;
+$color-dark: black !default;
 
 $color-background: $color-light;
 $color-font: $color-dark;

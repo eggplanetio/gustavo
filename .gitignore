@@ -10,5 +10,6 @@ npm-debug.log
 # Nuxt generate
 dist
 
-# gus config
-gus.config.js
+# gustavo config
+gustavo.config.js
+dummy/gustavo.config.js
