@@ -4,6 +4,7 @@
 
 ### Contents
 
+- [Demo](https://briangonzalez.org)
 - [Getting Started](#getting-started)
 - [Running locally](#running-locally)
 - [Deployment](#deployment)
