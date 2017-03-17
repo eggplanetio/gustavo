@@ -1,7 +1,7 @@
 <template>
   <nav>
     <a @click="toggle" class="toggle" v-if="hidden">=</a>
-    <a @click="toggle" class="toggle" v-else>×</a>
+    <a @click="toggle" class="toggle" v-else> </a>
 
     <ul v-if="!hidden">
       <li v-for="link in links">
@@ -41,7 +41,7 @@ export default {
 @import "~assets/css/_settings.scss";
 
 nav {
-  position: absolute;
+  position: fixed;
   top: $size-unit;
   right: $size-unit;
   text-align: right;
@@ -53,6 +53,7 @@ a {
   cursor: pointer;
   position: relative;
   z-index: 11;
+  font-size: 150%;
 
   &.toggle {
     margin-right: $size-unit/3;

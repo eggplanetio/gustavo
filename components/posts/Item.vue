@@ -24,13 +24,18 @@ export default {
 @import "~assets/css/_settings.scss";
 
 .post-item {
-  margin-bottom: $size-unit;
+  margin-bottom: $size-unit*1.5;
   list-style-type: none;
   padding: 0;
 
   a {
     text-decoration: none;
     border: none;
+  }
+
+  date {
+    margin-top: $size-unit/2;
+    display: block;
   }
 }
 </style>

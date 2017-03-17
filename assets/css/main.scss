@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  font-family: 'Inconsolata', sans-serif;
+  font-family: $font-family;
   font-size: $font-size;
   -webkit-font-smoothing: antialiased;
   padding: $size-unit * 3;
@@ -28,18 +28,17 @@ body {
 main {
   max-width: $size-unit * 25;
   flex: 1;
+  line-height: 1.9;
 
   table {
     width: 100%;
     display: block;
     overflow-x: scroll;
-    box-shadow: -3px -0px 5px -3px $color-dark inset;
   }
 
 }
 
 p {
-  line-height: 1.7;
   margin-bottom: $size-unit;
 }
 
@@ -91,14 +90,13 @@ main ul {
 }
 
 pre {
-  background: #f6f6f6;
+  background: $color-code;
   overflow-x: scroll;
   padding: $size-unit;
 }
 
 code {
-  font-size: 85%;
-  line-height: 1.4;
+  font-family: $font-family;
 }
 
 h1,
@@ -109,8 +107,17 @@ li {
 }
 
 table {
-  tr td {
-    border-bottom: 1px solid $color-border;
-    padding: $size-unit
+  background: $color-code;
+
+  th {
+    text-align: left;
   }
+
+  tr td,
+  tr th {
+    border-bottom: 1px solid $color-border;
+    padding: $size-unit $size-unit/2;
+  }
+
+
 }

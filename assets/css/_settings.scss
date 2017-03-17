@@ -1,6 +1,7 @@
 // Variables.
 $size-unit: 1rem;
-$font-size: 0.9rem;
+$font-size: 13px !default;
+$font-family: 'SFMono-Regular', 'Inconsolata', sans-serif !default;
 
 // Colors.
 $color-light: white !default;
@@ -9,6 +10,6 @@ $color-dark: black !default;
 
 $color-background: $color-light;
 $color-font: $color-dark;
-$color-border: $color-dark;
+$color-border: $color-gray - 10;
 $color-code: $color-gray;
 $color-heading-hash: $color-gray;
