@@ -11,8 +11,6 @@ try {
   config = {}
 }
 
-console.log(config)
-
 const githubToken = config.githubToken || process.env.GITHUB_TOKEN
 const gistId = config.gistId || process.env.GIST_ID
 
@@ -20,11 +18,15 @@ const opts = {
   url: `https://api.github.com/gists/${gistId}`
 }
 
-console.log(githubToken)
 if (githubToken) {
   opts['headers'] = {
     'Authorization': `token ${githubToken}`
   }
+}
+
+if (!githubToken || !gistId) {
+  console.warn('Github Token or Gist ID not provided.') // eslint-disable-line no-consol
+  process.exit(1)
 }
 
 router.get('/content', requestProxy(opts))
