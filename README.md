@@ -22,7 +22,7 @@ built to use:
 
 By simply naming your files in a uniform matter, Gustavo can create a whole blog
 for you in seconds. Don't believe me?
-Check out the [gist that is my blog](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e).
+Check out the [gist](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e) that is [my blog](https://briangonzalez.org).
 
 ## Creating content
 
