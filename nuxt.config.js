@@ -31,6 +31,7 @@ module.exports = {
   loading: { color: 'black' },
   plugins: [
     // '~plugins/vue-hljs',
+    '~plugins/ga',
     '~plugins/vue-moment',
     '~plugins/to-iso-date'
   ]

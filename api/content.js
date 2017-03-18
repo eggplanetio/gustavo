@@ -24,9 +24,13 @@ if (githubToken) {
   }
 }
 
-if (!githubToken || !gistId) {
-  console.warn('Github Token or Gist ID not provided.') // eslint-disable-line no-consol
-  process.exit(1)
+  /* eslint-disable no-console */
+if (typeof githubToken === 'undefined') {
+  console.warn(`Github Token not provided. You will be rate limited.`)
+}
+
+if (!gistId) {
+  throw new Error(`No Gist ID found in config or via ENV variable.`)
 }
 
 router.get('/content', requestProxy(opts))
