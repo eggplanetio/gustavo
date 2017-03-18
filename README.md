@@ -20,6 +20,10 @@ built to use:
 - Nuxt (Vue 2.0)
 - Docker
 
+By simply naming your files in a uniform matter, Gustavo can create a whole blog
+for you in seconds. Don't believe me?
+Check out the [gist that is my blog](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e).
+
 ## Creating content
 
 You can create content for your blog by simply creating
@@ -33,7 +37,8 @@ files in a gist that follow this schema:
 | image       | clone gist and upload   | [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-your-speed-jpg)                  |
 | draft       | `{name}.post.draft.md`  |                                                                                                                     |
 
-Here is the [gist](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e) that powers [this blog](https://www.briangonzalez.org).
+Here is the [gist](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e)
+that powers [this blog](https://www.briangonzalez.org).
 
 ## Getting started
 
