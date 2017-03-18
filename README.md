@@ -1,4 +1,4 @@
-<img src="https://cloud.githubusercontent.com/assets/659829/24072567/5e342bfc-0ba6-11e7-9c43-35d2cc192078.jpg">
+<img src="https://cloud.githubusercontent.com/assets/659829/24072589/a5b60f90-0ba6-11e7-865b-d2356c16e280.jpg">
 
 > A (mostly) headless blogging platform built atop Nuxt & Gist.
 
