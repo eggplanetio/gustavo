@@ -3,18 +3,19 @@ MAINTAINER briangonzalez
 
 ENV NODE_ENV production
 
-# Create app directory
+# Create app directory & copy package.json.
 RUN mkdir -p /app
-COPY . /app
-ONBUILD COPY . /app
+COPY package.json /app/package.json
 
-# Copy files.
+# Install deps.
 WORKDIR /app
 RUN npm install
-RUN ./node_modules/.bin/nuxt build
+
+# Copy app files & build.
+ONBUILD COPY . /app
 ONBUILD RUN ./node_modules/.bin/nuxt build
 
-# Expose the app port
+# Expose the app port.
 EXPOSE 3000
 
 CMD ["node", "/app/server.js"]

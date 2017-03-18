@@ -1,4 +1,4 @@
-<img src="https://cloud.githubusercontent.com/assets/659829/24047992/b063b874-0ae4-11e7-8df6-4dbb3686c7f1.png">
+<img src="https://cloud.githubusercontent.com/assets/659829/24068803/551b203a-0b55-11e7-8322-6440783756b2.png">
 
 > A blogging platform built atop Nuxt & Gist.
 
@@ -34,8 +34,8 @@ You're all done!
 Now let's start it up:
 
 ```
-docker build -t my-gus-blog .
-docker run my-gus-blog --port 3000:3000
+docker build -t my-gustavo-blog .
+docker run -p 3000:3000 my-gustavo-blog
 ```
 
 Your blog will be running at http://localhost:3000
@@ -56,4 +56,4 @@ now -e GITHUB_TOKEN=@gustavo-github-token -e GIST_ID=@gustavo-gist-id --docker
 
 ### Credits
 
-- [Logo by Awais Rashid Khan from the Noun Project](https://thenounproject.com/search/?q=man+hat&i=31120)
+- [Logo](https://thenounproject.com/search/?q=man&i=542085)
