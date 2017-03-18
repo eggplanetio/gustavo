@@ -1,17 +1,45 @@
 <img src="https://cloud.githubusercontent.com/assets/659829/24068803/551b203a-0b55-11e7-8322-6440783756b2.png">
 
-> A blogging platform built atop Nuxt & Gist.
+> A (mostly) headless blogging platform built atop Nuxt & Gist.
+
+[Demo](https://www.briangonzalez.org)
 
 ### Contents
 
-- [Demo](https://briangonzalez.org)
+- [Overview](#overview)
+- [Creating Content](#creating-content)
 - [Getting Started](#getting-started)
-- [Running locally](#running-locally)
 - [Deployment](#deployment)
+
+## Overview
+
+Gustavo is an opinionated, (mostly) [headless](https://headlesscms.org/) blogging platform
+built to use:
+
+- Github Gist
+- Nuxt (Vue 2.0)
+- Docker
+
+## Creating content
+
+You can create content for your blog by simply creating
+files in a gist that follow this schema:
+
+| Type        | Naming                  |
+|-------------|-------------------------|
+| post        | `{name}.post.md`        |
+| draft       | `{name}.post.draft.md`  |
+| page        | `{name}.page.md`        |
+| navigation  | `links.txt`             |
+| image       | clone gist and upload   |
+
+Here is the [gist](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e) that powers [this blog](https://www.briangonzalez.org).
 
 ## Getting started
 
-Step 1, create `gustavo.config.js` with the following:
+Step 1, create your gist and add some content.
+
+Step 2, create `gustavo.config.js` with the following:
 
 ```js
 module.exports = {
@@ -19,19 +47,17 @@ module.exports = {
   githubToken: '<< token >>',
   gistId: '<< gist id >>'
 }
-````
+```
 
-Step 2, create a `Dockerfile` with the following:
+_Note: you'll want to create a [personal access token](https://github.com/settings/tokens) on Github because Gustavo uses the Gist API, and without the token, your blog will be rate limited._
+
+Step 3, create a `Dockerfile` with the following:
 
 ```docker
 FROM eggplanet/gustavo:latest
 ```
 
-You're all done!
-
-## Running locally
-
-Now let's start it up:
+Step 4, let's start it up.
 
 ```
 docker build -t my-gustavo-blog .
@@ -48,6 +74,7 @@ Deploying gustavo is simple. Our reccomended method is [Now by Zeit](https://zei
 now secrets add gustavo-github-token=<TOKEN>
 now secrets add gustavo-gist-id=<ID>
 now -e GITHUB_TOKEN=@gustavo-github-token -e GIST_ID=@gustavo-gist-id --docker
+now alias my-gustavo-blog-wjdihnxorf.now.sh my-gustavo.blog
 ```
 
 ### License
@@ -57,3 +84,10 @@ now -e GITHUB_TOKEN=@gustavo-github-token -e GIST_ID=@gustavo-gist-id --docker
 ### Credits
 
 - [Logo](https://thenounproject.com/search/?q=man&i=542085)
+
+### Releasing a new image
+
+```
+docker build -t eggplanet/gustavo .
+docker push eggplanet/gustavo
+```

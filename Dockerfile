@@ -12,6 +12,7 @@ WORKDIR /app
 RUN npm install
 
 # Copy app files & build.
+COPY . /app
 ONBUILD COPY . /app
 ONBUILD RUN ./node_modules/.bin/nuxt build
 

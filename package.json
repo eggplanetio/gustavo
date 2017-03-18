@@ -1,7 +1,7 @@
 {
   "name": "gustavo",
   "version": "0.0.1",
-  "description": "A blogging platform built atop Nuxt & Gist.",
+  "description": "A (mostly) headless blogging platform built atop Nuxt & Gist.",
   "author": "Brian Gonzalez <me@briangonzalez.org>",
   "scripts": {
     "dev": "nodemon --exec node server.js -w nuxt.config.js -w api/ -w server.js",
