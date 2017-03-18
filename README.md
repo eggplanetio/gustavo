@@ -25,13 +25,13 @@ built to use:
 You can create content for your blog by simply creating
 files in a gist that follow this schema:
 
-| Type        | Naming                  |
-|-------------|-------------------------|
-| post        | `{name}.post.md`        |
-| draft       | `{name}.post.draft.md`  |
-| page        | `{name}.page.md`        |
-| navigation  | `links.txt`             |
-| image       | clone gist and upload   |
+| Type        | Naming                  | Example                                                                                                             |
+|-------------|-------------------------| --------------------------------------------------------------------------------------------------------------------|
+| post        | `{name}.post.md`        | [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-lazy-leadership-post-md)         |
+| page        | `{name}.page.md`        | [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-about-page-md)                   |
+| navigation  | `links.txt`             | [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-links-txt)                       |
+| image       | clone gist and upload   | [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-your-speed-jpg)                  |
+| draft       | `{name}.post.draft.md`  |                                                                                                                     |
 
 Here is the [gist](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e) that powers [this blog](https://www.briangonzalez.org).
 
