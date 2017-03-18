@@ -4,6 +4,8 @@
 
 ### Contents
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/eggplanetio/gustavo.svg)](https://greenkeeper.io/)
+
 - [Demo](https://briangonzalez.org)
 - [Getting Started](#getting-started)
 - [Running locally](#running-locally)
