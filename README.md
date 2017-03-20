@@ -7,8 +7,8 @@
 ### Contents
 
 - [Overview](#overview)
-- [Creating Content](#creating-content)
-- [Getting Started](#getting-started)
+- [Creating content](#creating-content)
+- [Getting started](#getting-started)
 - [Deployment](#deployment)
 
 ## Overview
@@ -42,9 +42,11 @@ that powers [this blog](https://www.briangonzalez.org).
 
 ## Getting started
 
-Step 1, create your gist and add some content.
+To create a blog, follow these steps:
 
-Step 2, create `gustavo.config.js` with the following:
+1. Create your gist and add some content.
+
+2. Create `gustavo.config.js` with the following:
 
 ```js
 module.exports = {
@@ -56,30 +58,30 @@ module.exports = {
 
 _Note: you'll want to create a [personal access token](https://github.com/settings/tokens) on Github because Gustavo uses the Gist API, and without the token, your blog will be rate limited._
 
-Step 3, create a `Dockerfile` with the following:
+3. Create a `Dockerfile` with the following:
 
 ```docker
 FROM eggplanet/gustavo:latest
 ```
 
-Step 4, let's start it up.
+4. Let's start it up:
 
-```
-docker build -t my-gustavo-blog .
-docker run -p 3000:3000 my-gustavo-blog
+```bash
+$ docker build -t my-gustavo-blog .
+$ docker run -p 3000:3000 my-gustavo-blog
 ```
 
 Your blog will be running at http://localhost:3000
 
 ## Deployment
 
-Deploying gustavo is simple. Our reccomended method is [Now by Zeit](https://zeit.co/now).
+Deploying gustavo is simple. Our recommended method is [Now by Zeit](https://zeit.co/now).
 
 ```bash
-now secrets add gustavo-github-token=<TOKEN>
-now secrets add gustavo-gist-id=<ID>
-now -e GITHUB_TOKEN=@gustavo-github-token -e GIST_ID=@gustavo-gist-id --docker
-now alias my-gustavo-blog-wjdihnxorf.now.sh my-gustavo.blog
+$ now secrets add gustavo-github-token=<TOKEN>
+$ now secrets add gustavo-gist-id=<ID>
+$ now -e GITHUB_TOKEN=@gustavo-github-token -e GIST_ID=@gustavo-gist-id --docker
+$ now alias my-gustavo-blog-wjdihnxorf.now.sh my-gustavo.blog
 ```
 
 ### License
@@ -92,7 +94,7 @@ now alias my-gustavo-blog-wjdihnxorf.now.sh my-gustavo.blog
 
 ### Releasing a new image
 
-```
-docker build -t eggplanet/gustavo .
-docker push eggplanet/gustavo
+```bash
+$ docker build -t eggplanet/gustavo .
+$ docker push eggplanet/gustavo
 ```
