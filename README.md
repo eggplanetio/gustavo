@@ -13,8 +13,8 @@
 
 ## Overview
 
-Gustavo is an opinionated, (mostly) [headless](https://headlesscms.org/) blogging platform
-built to use:
+Gustavo is an opinionated, (mostly) [headless](https://headlesscms.org/) blogging
+platform built to use:
 
 - Github Gist
 - Nuxt (Vue 2.0)
@@ -22,7 +22,7 @@ built to use:
 
 By simply naming your files in a uniform matter, Gustavo can create a whole blog
 for you in seconds. Don't believe me?
-Check out the [gist](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e) that is [my blog](https://briangonzalez.org).
+Check out the [gist](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e) that is [my blog](https://www.briangonzalez.org).
 
 ## Creating content
 
