@@ -1,1 +1,1 @@
-FROM gustavo:latest
+FROM eggplanet/gustavo
