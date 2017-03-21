@@ -25,19 +25,6 @@ body {
   color: $color-font;
 }
 
-main {
-  max-width: $size-unit * 25;
-  flex: 1;
-  line-height: 1.9;
-
-  table {
-    width: 100%;
-    display: block;
-    overflow-x: scroll;
-  }
-
-}
-
 p {
   margin-bottom: $size-unit;
 }
@@ -55,19 +42,22 @@ h1, h2, h3, h4 {
   }
 }
 
-h2:before { content: '## ' }
-h3:before { content: '### ' }
-
-main h2 {
-  margin-top: $size-unit * 2;
+main {
+  h2 { margin-top: $size-unit * 2; }
+  h2:before { content: '## ' }
+  h3:before { content: '### ' }
 }
 
-date {
-  opacity: 0.3;
+main ul {
+  li {
+    margin-bottom: $size-unit;
+  }
 }
 
-ul {
-  margin-top: 0;
+main blockquote {
+  margin: 0;
+  padding-left: $size-unit * 2;
+  border-left: 1px solid $color-border;
 }
 
 a,
@@ -82,11 +72,26 @@ a:active {
 
 }
 
+main {
+  max-width: $size-unit * 25;
+  flex: 1;
+  line-height: 1.9;
 
-main ul {
-  li {
-    margin-bottom: $size-unit;
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: scroll;
   }
+
+}
+
+
+date {
+  opacity: 0.3;
+}
+
+ul {
+  margin-top: 0;
 }
 
 pre {
@@ -118,6 +123,5 @@ table {
     border-bottom: 1px solid $color-border;
     padding: $size-unit $size-unit/2;
   }
-
 
 }
