@@ -33,7 +33,8 @@ files in a gist that follow this schema:
 |-------------|-------------------------| --------------------------------------------------------------------------------------------------------------------|
 | post        | `{name}.post.md`        | [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-lazy-leadership-post-md)         |
 | page        | `{name}.page.md`        | [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-about-page-md)                   |
-| navigation  | `links.txt`             | [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-links-txt)                       |
+| navigation  | `links.md`              | [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-links-md)                       |
+| navigation  | `links.txt` (deprecated)| [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-links-txt)                       |
 | image       | clone gist and upload   | [link](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e#file-your-speed-jpg)                  |
 | draft       | `{name}.post.draft.md`  |                                                                                                                     |
 
