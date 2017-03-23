@@ -23,6 +23,7 @@
     "express": "^4.15.2",
     "express-request-proxy": "^2.0.0",
     "html-element": "^2.2.0",
+    "lodash-es": "^4.17.4",
     "morgan": "^1.8.1",
     "node-sass": "^4.5.0",
     "normalize.css": "^5.0.0",

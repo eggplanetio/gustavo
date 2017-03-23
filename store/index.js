@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import parser from './parser'
+import { uniqBy } from 'lodash-es'
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -55,16 +57,36 @@ const store = new Vuex.Store({
       state.posts = parser.parsePosts(files)
     },
     SET_LINKS_FROM_FILES (state, files) {
-      const linkFile = (files || []).find(file => file.filename === 'links.txt')
+      const linkTxt = (files || []).find(file => file.filename === 'links.txt')
 
-      if (linkFile) {
-        state.links = linkFile
-        .content
-        .split('\n')
-        .filter(link => link)
-        .map(link => link.split(' '))
-        .map(link => { return { href: link[1], text: link[0] } })
+      let links = []
+      if (linkTxt) {
+        links = links.concat(
+          linkTxt.content
+          .split('\n')
+          .filter(link => link)
+          .map(link => link.split(' '))
+          .map(link => { return { href: link[1], text: link[0] } })
+        )
       }
+
+      const linkMd = (files || []).find(file => file.filename === 'links.md')
+
+      if (linkMd) {
+        // http://stackoverflow.com/questions/9268407/how-to-convert-markdown-style-links-using-regex
+        const linkRe = /\[([^\]]+)\]\(([^)"]+)(?: "([^"]+)")?\)/
+        links = links.concat(
+          linkMd.content
+          .split('\n')
+          .filter(link => link)
+          .map(link => link.match(linkRe))
+          .map(link => {
+            return { href: link[2], text: link[1] }
+          })
+        )
+      }
+
+      state.links = uniqBy(links, link => link.href)
     }
   },
 
