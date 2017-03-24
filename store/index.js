@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import parser from './parser'
-import { uniqBy } from 'lodash-es'
+import uniqBy from 'lodash.uniqby'
 
 Vue.use(Vuex)
 
