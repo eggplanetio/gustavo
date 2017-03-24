@@ -34,5 +34,8 @@ module.exports = {
     '~plugins/ga',
     '~plugins/vue-moment',
     '~plugins/to-iso-date'
-  ]
+  ],
+  router: {
+    middleware: 'hide-nav'
+  }
 }

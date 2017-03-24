@@ -16,18 +16,15 @@
 </template>
 
 <script>
+import store from '~store'
 import { mapState } from 'vuex'
-import HeaderLink from '~/components/site/HeaderLink';
+import HeaderLink from '~/components/site/HeaderLink'
 
 export default {
-  data() {
-    return {
-      hidden: true
-    }
-  },
+  props: [ 'hidden' ],
   methods: {
     toggle() {
-      this.hidden = !this.hidden
+      store.commit('TOGGLE_NAV')
     }
   },
   components: { HeaderLink },
@@ -45,7 +42,6 @@ nav {
   top: $size-unit;
   right: $size-unit;
   text-align: right;
-  background: $color-background;
   user-select: none;
 }
 
@@ -61,6 +57,7 @@ a {
 }
 
 ul {
+  background: $color-background;
   border: 1px solid $color-font;
   list-style-type: none;
   padding: $size-unit;

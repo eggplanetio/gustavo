@@ -1,7 +1,7 @@
 <template>
   <div>
     <site-head/>
-    <site-nav/>
+    <site-nav :hidden="navHidden" />
     <main>
       <nuxt/>
     </main>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import SiteHead from '~components/site/Head.vue'
 import SiteNav from '~components/site/Nav.vue'
 import SiteFooter from '~components/site/Footer.vue'
@@ -20,7 +21,9 @@ export default {
     SiteNav,
     SiteFooter
   },
-
+  computed: {
+    ...mapState([ 'navHidden', 'links' ])
+  }
 }
 </script>
 

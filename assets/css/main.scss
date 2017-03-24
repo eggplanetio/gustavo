@@ -34,6 +34,7 @@ h1, h2, h3, h4 {
   font-weight: normal;
   margin-top: 0;
   position: relative;
+  z-index: -1;
 
   a { text-decoration: none; }
   &:before {
@@ -49,6 +50,9 @@ main {
 }
 
 main ul {
+
+  padding-left: $size-unit * 2;
+
   li {
     margin-bottom: $size-unit;
   }

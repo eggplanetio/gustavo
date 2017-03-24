@@ -13,7 +13,8 @@ const store = new Vuex.Store({
     currentPost: {},
     posts: [],
     links: [],
-    host: ''
+    host: '',
+    navHidden: true
   },
 
   actions: {
@@ -87,6 +88,12 @@ const store = new Vuex.Store({
       }
 
       state.links = uniqBy(links, link => link.href)
+    },
+    TOGGLE_NAV (state) {
+      state.navHidden = !state.navHidden
+    },
+    HIDE_NAV (state) {
+      state.navHidden = true
     }
   },
 
