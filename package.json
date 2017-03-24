@@ -7,7 +7,8 @@
     "dev": "nodemon --exec node server.js -w nuxt.config.js -w api/ -w server.js",
     "start": "(NODE_ENV=production nuxt build && NODE_ENV=production node server.js)",
     "precommit": "npm run lint",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "docker-publish": "docker build -t eggplanet/gustavo . && docker push eggplanet/gustavo"
   },
   "babel": {
     "presets": [
