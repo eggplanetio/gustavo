@@ -11,16 +11,10 @@
 
 <script>
 export default {
-
-  // render () {
-  //   return this.content;
-  // },
   template() {
-    return this.content;
+    return this.content
   },
 
-  props: [
-    'content',
-  ],
+  props: ['content']
 }
 </script>

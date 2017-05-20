@@ -7,7 +7,7 @@ module.exports = {
   },
   build: {
     plugins: [
-      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)
+      new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/)
     ]
   },
   srcDir: __dirname,

@@ -13,7 +13,7 @@
 export default {
   props: ['post'],
   computed: {
-    to() {
+    to () {
       return this.post.path
     }
   }

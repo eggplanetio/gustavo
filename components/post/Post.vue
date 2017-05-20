@@ -15,7 +15,7 @@ import postContent from '~components/post/Content.vue'
 export default {
   components: { postContent },
   props: [
-    'post',
-  ],
+    'post'
+  ]
 }
 </script>

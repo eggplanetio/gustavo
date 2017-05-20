@@ -7,7 +7,7 @@
     "dev": "nodemon --exec node server.js -w nuxt.config.js -w api/ -w server.js",
     "start": "(NODE_ENV=production nuxt build && NODE_ENV=production node server.js)",
     "precommit": "npm run lint",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "eslint --ignore-path .gitignore .",
     "docker-publish": "docker build -t eggplanet/gustavo . && docker push eggplanet/gustavo"
   },
   "babel": {
@@ -42,6 +42,8 @@
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-html": "^2.0.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "nodemon": "^1.11.0"
