@@ -17,7 +17,7 @@ Gustavo is an opinionated, (mostly) [headless](https://headlesscms.org/) bloggin
 platform built to use:
 
 - Github Gist
-- Nuxt (Vue 2.0)
+- Nuxt (Vue 2.x)
 - Docker
 
 By simply naming your files in a uniform matter, Gustavo can create a whole blog

@@ -44,9 +44,12 @@ h1, h2, h3, h4 {
 }
 
 main {
-  h2 { margin-top: $size-unit * 2; }
+  h2 {
+    margin-top: $size-unit * 2;
+   }
   h2:before { content: '## ' }
   h3:before { content: '### ' }
+  h4:before { content: '#### ' }
 }
 
 main ul {
@@ -89,7 +92,7 @@ main {
 
 }
 
-date,
+time,
 author {
   opacity: 0.3;
 }
