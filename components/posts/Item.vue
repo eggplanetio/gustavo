@@ -2,9 +2,9 @@
   <li class="post-item">
     <nuxt-link :to="to">
       {{ post.meta.title }}
-      <date>
+      <time>
         {{ post.meta.date | toIsoDate | moment("MMM D YYYY") }}
-      </date>
+      </time>
     </nuxt-link>
   </li>
 </template>
@@ -13,7 +13,7 @@
 export default {
   props: ['post'],
   computed: {
-    to () {
+    to() {
       return this.post.path
     }
   }
@@ -33,7 +33,7 @@ export default {
     border: none;
   }
 
-  date {
+  time {
     margin-top: $size-unit/2;
     display: block;
   }

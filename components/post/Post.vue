@@ -3,7 +3,7 @@
     <h1>{{ post.meta.title }}</h1>
     <p>
       <author v-if="post.meta.author">{{ post.meta.author }} / </author>
-      <date v-if="post.meta.date">{{ post.meta.date | toIsoDate | moment("MMM D YYYY") }}</date>
+      <time v-if="post.meta.date">{{ post.meta.date | toIsoDate | moment("MMM D YYYY") }}</time>
       </p>
     <div v-html="post.content">
     </div>

@@ -15,7 +15,7 @@ const makeDOM = (html) => {
 }
 
 export default {
-  parseItem (raw, split) {
+  parseItem(raw, split) {
     let content = converter.makeHtml(raw.content)
     const doc = makeDOM(content)
 
@@ -38,17 +38,17 @@ export default {
     }
   },
 
-  parsePosts (files) {
+  parsePosts(files) {
     return files
-    .filter(file => file.filename.includes('.post.md'))
-    .map(raw => this.parseItem(raw, '.post'))
-    .sort((current, other) => new Date(other.meta.date) - new Date(current.meta.date))
+      .filter(file => file.filename.includes('.post.md'))
+      .map(raw => this.parseItem(raw, '.post'))
+      .sort((current, other) => new Date(other.meta.date) - new Date(current.meta.date))
   },
 
-  parsePages (files) {
+  parsePages(files) {
     return files
-    .filter(file => file.filename.includes('.page.md'))
-    .map(raw => this.parseItem(raw, '.page'))
+      .filter(file => file.filename.includes('.page.md'))
+      .map(raw => this.parseItem(raw, '.page'))
   }
 
 }

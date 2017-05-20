@@ -3,7 +3,7 @@
     <h1>
       {{ post.meta.title }}
     </h1>
-    <p><date>{{ post.meta.date | moment("MMM D YYYY") }}</date></p>
+    <p><time>{ post.meta.date | moment("MMM D YYYY") }}</time>/p>
     <div v-html="post.content">
     </div>
   </div>
@@ -15,7 +15,7 @@ export default {
   // render () {
   //   return this.content;
   // },
-  template () {
+  template() {
     return this.content;
   },
 
