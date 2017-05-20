@@ -5,19 +5,14 @@
 
 <script>
 export default {
-  data () {
-    return {
-      /* none for now */
-    }
-  },
   head: {
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      { href: "https://fonts.googleapis.com/css?family=Inconsolata", rel: 'stylesheet' }
+      { href: 'https://fonts.googleapis.com/css?family=Inconsolata', rel: 'stylesheet' }
     ]
   }
 }
