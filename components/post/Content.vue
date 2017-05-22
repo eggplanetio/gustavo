@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  template() {
+  template () {
     return this.content
   },
 

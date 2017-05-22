@@ -23,7 +23,7 @@ import HeaderLink from '~/components/site/HeaderLink'
 export default {
   props: [ 'hidden' ],
   methods: {
-    toggle() {
+    toggle () {
       store.commit('TOGGLE_NAV')
     }
   },
@@ -84,4 +84,3 @@ ul {
 }
 
 </style>
-

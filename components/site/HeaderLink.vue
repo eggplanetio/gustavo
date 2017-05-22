@@ -16,9 +16,9 @@ export default {
   props: ['link'],
 
   computed: {
-    isLocal() {
-      const href = this.link.href || '';
-      return href.startsWith('/');
+    isLocal () {
+      const href = this.link.href || ''
+      return href.startsWith('/')
     }
   }
 
