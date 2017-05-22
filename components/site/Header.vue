@@ -14,7 +14,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import HeaderLink from '~/components/site/HeaderLink';
+import HeaderLink from '~/components/site/HeaderLink'
 
 export default {
   components: { HeaderLink },

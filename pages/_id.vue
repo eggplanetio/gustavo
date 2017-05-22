@@ -10,13 +10,11 @@
 </template>
 
 <script>
-import store from '~store';
-import axios from 'axios';
 import { mapState } from 'vuex'
 
 export default {
   async fetch ({ store, params }) {
-    await store.dispatch('FETCH_PAGE', params.id);
+    await store.dispatch('FETCH_PAGE', params.id)
   },
 
   head () {

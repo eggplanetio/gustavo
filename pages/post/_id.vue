@@ -6,9 +6,7 @@
 </template>
 
 <script>
-import store from '~store';
-import post from '~components/post/Post.vue';
-import axios from 'axios';
+import post from '~components/post/Post.vue'
 import { mapState } from 'vuex'
 
 export default {
@@ -19,7 +17,7 @@ export default {
     const currentPost = store.state.currentPost
 
     if (!currentPost) return redirect('/')
-    return currentPost;
+    return currentPost
   },
 
   head () {
