@@ -1,15 +1,6 @@
-const path = require('path')
 const router = require('express').Router()
 const requestProxy = require('express-request-proxy')
-
-let config
-
-try {
-  config = require(path.join(process.cwd(), './gustavo.config'))
-} catch (error) {
-  console.log('No gustavo.config.js file found in current directory, falling back to env') // eslint-disable-line no-console
-  config = {}
-}
+const config = require('../lib/config')
 
 const githubToken = config.githubToken || process.env.GITHUB_TOKEN
 const gistId = config.gistId || process.env.GIST_ID
@@ -24,7 +15,7 @@ if (githubToken) {
   }
 }
 
-  /* eslint-disable no-console */
+/* eslint-disable no-console */
 if (typeof githubToken === 'undefined') {
   console.warn(`Github Token not provided. You will be rate limited.`)
 }

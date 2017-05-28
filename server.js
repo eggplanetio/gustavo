@@ -5,7 +5,7 @@ const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3000
 
 app.set('port', port)
-app.use('/api', require('./api/index'))
+app.use('/api', require('./api'))
 
 // Import and Set Nuxt.js options.
 let config = require('./nuxt.config.js')
@@ -18,10 +18,10 @@ app.use(nuxt.render)
 // Build only in dev mode.
 if (config.dev) {
   nuxt.build()
-  .catch((error) => {
-    console.error(error) // eslint-disable-line no-console
-    process.exit(1)
-  })
+    .catch((error) => {
+      console.error(error) // eslint-disable-line no-console
+      process.exit(1)
+    })
 }
 
 // Logging and compression in production.

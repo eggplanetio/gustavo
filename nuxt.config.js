@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const gustavoConfig = require('./gustavo.config.js')
+const gustavoConfig = require('./lib/config')
 
 module.exports = {
   env: {

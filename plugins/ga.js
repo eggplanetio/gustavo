@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-let config = require('../gustavo.config.js')
+let config = require('../lib/config')
 let googleAnalyticsId
 if ('googleAnalyticsId' in config) googleAnalyticsId = config.googleAnalyticsId
 
