@@ -1,5 +1,5 @@
-const webpack = require('webpack')
-const gustavoConfig = require('./lib/config')
+import webpack from 'webpack'
+import gustavoConfig from './src/config'
 
 module.exports = {
   env: {
@@ -28,7 +28,9 @@ module.exports = {
     'normalize.css',
     { src: '~assets/css/main.scss', lang: 'scss' }
   ],
-  loading: { color: 'black' },
+  loading: {
+    color: gustavoConfig.loadingColor || 'black'
+  },
   plugins: [
     // '~plugins/vue-hljs',
     '~plugins/ga',

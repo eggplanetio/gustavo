@@ -20,8 +20,7 @@ platform built to use:
 - Nuxt (Vue 2.x)
 - Docker
 
-By simply naming your files in a uniform matter, Gustavo can create a whole blog
-for you in seconds. Don't believe me?
+Using a simple naming schema, Gustavo can create a whole blog for you in seconds. Don't believe me?
 Check out the [gist](https://gist.github.com/briangonzalez/2ece66bfffff31ddc230ca8342e80b3e) that is [my blog](https://www.briangonzalez.org).
 
 ## Creating content
@@ -52,12 +51,13 @@ To create a blog, follow these steps:
 ```js
 module.exports = {
   title: 'My gustavo blog',
-  githubToken: '<< token >>',
-  gistId: '<< gist id >>'
+  gistId: '<< gist id >>',
+  githubToken: '<< token >>', /* optional, recommended */
+  cacheDuration: '30 minutes', /* optional */
 }
 ```
 
-_Note: you'll want to create a [personal access token](https://github.com/settings/tokens) on Github because Gustavo uses the Gist API, and without the token, your blog will be rate limited._
+_Note: you'll want to create a [personal access token](https://github.com/settings/tokens) on Github because Gustavo uses the Gist API, and without the token and although it will still work, your blog will be rate limited._
 
 3. Create a `Dockerfile` with the following:
 
@@ -76,7 +76,7 @@ Your blog will be running at http://localhost:3000
 
 ## Deployment
 
-Deploying gustavo is simple. Our recommended method is [Now by Zeit](https://zeit.co/now).
+Deploying gustavo is simple. The recommended method is [Now by Zeit](https://zeit.co/now).
 
 ```bash
 $ now secrets add gustavo-github-token=<TOKEN>

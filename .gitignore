@@ -7,8 +7,9 @@ npm-debug.log
 # Nuxt build
 .nuxt
 
-# Nuxt generate
+# Build.
 dist
+build
 
 # gustavo config
 gustavo.config.js

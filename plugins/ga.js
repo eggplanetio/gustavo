@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-let config = require('../lib/config')
+import config from '../src/config'
 let googleAnalyticsId
 if ('googleAnalyticsId' in config) googleAnalyticsId = config.googleAnalyticsId
 
