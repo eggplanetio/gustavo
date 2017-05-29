@@ -26,6 +26,7 @@ body {
 }
 
 p {
+  margin-top: 0;
   margin-bottom: $size-unit;
 }
 
@@ -44,17 +45,22 @@ h1, h2, h3, h4 {
 }
 
 main {
-  h2 {
-    margin-top: $size-unit * 2;
-   }
-  h2:before { content: '## ' }
-  h3:before { content: '### ' }
-  h4:before { content: '#### ' }
+  h2,
+  h3,
+  h4 {
+    margin: $size-unit 0;
+    border-bottom: 1px solid $color-border;
+    display: inline-block;
+  }
+
+  h2:after,
+  h3:after,
+  h4:after { display: block }
 }
 
-main ul {
-
-  padding-left: $size-unit * 2;
+main ul,
+main ol {
+  padding-left: $size-unit;
 
   li {
     margin-bottom: $size-unit;
@@ -63,7 +69,7 @@ main ul {
 
 main blockquote {
   margin: 0;
-  padding-left: $size-unit * 2;
+  padding-left: $size-unit;
   border-left: 1px solid $color-border;
 }
 

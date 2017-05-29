@@ -3,13 +3,15 @@ $size-unit: 1rem;
 $font-size: 13px !default;
 $font-family: 'SFMono-Regular', 'Inconsolata', sans-serif !default;
 
-// Colors.
+// Colors
 $color-light: white !default;
 $color-gray: #ccc !default;
+$color-light-gray: #f7f7f7 !default;
+$color-dark-gray: #9a9a9a !default;
 $color-dark: black !default;
 
 $color-background: $color-light;
 $color-font: $color-dark;
-$color-border: $color-gray - 10;
-$color-code: $color-gray;
-$color-heading-hash: $color-gray;
+$color-border: $color-gray;
+$color-code: $color-light-gray;
+$color-heading-hash: $color-dark-gray;
