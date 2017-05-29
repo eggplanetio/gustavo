@@ -1,7 +1,8 @@
-const router = require('express').Router()
-const requestProxy = require('express-request-proxy')
-const config = require('../lib/config')
+import express from 'express'
+import requestProxy from 'express-request-proxy'
+import config from '../../src/config'
 
+const router = express.Router()
 const githubToken = config.githubToken || process.env.GITHUB_TOKEN
 const gistId = config.gistId || process.env.GIST_ID
 
