@@ -1,6 +1,6 @@
 {
   "name": "gustavo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A (mostly) headless blogging platform built atop Nuxt & Gist.",
   "author": "Brian Gonzalez <me@briangonzalez.org>",
   "scripts": {
