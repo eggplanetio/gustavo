@@ -7,8 +7,7 @@
     "dev": "nodemon --exec babel-node server/index.js -w nuxt.config.js -w gustavo.config.js -w src/",
     "build": "rm -rf build && npm run copy-app && babel --out-dir ./build . -s --ignore node_modules,build,assets,components,dummy,layouts,middleware,pages,plugins,static,store > /dev/null 2>&1",
     "copy-app": "rsync -av --exclude='node_modules' --exclude='build' --exclude='.git' --exclude='.nuxt' . ./build > /dev/null 2>&1",
-    "start": "npm run dev",
-    "prod": "npm run build && npm build && (NODE_ENV=production node build/server/index.js)",
+    "start": "npm run build && (NODE_ENV=production node build/server/index.js)",
     "precommit": "npm run lint",
     "lint": "eslint --ext .html,.js,.vue --ignore-path .gitignore .",
     "docker-publish": "docker build -t eggplanet/gustavo . && docker push eggplanet/gustavo"

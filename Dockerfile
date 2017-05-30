@@ -17,9 +17,8 @@ RUN npm install
 # Copy app files & build.
 COPY . /app
 ONBUILD COPY . /app
-ONBUILD RUN npm run build
 
 # Expose the app port.
 EXPOSE 3000
 
-CMD ["node", "/app/build/server/index.js"]
+CMD ["npm", "start"]
