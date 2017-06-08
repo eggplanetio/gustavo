@@ -1,6 +1,11 @@
 /* eslint-disable */
+// import nuxtConfig from '../nuxt.config'
+const nuxtConfig = { config: {} };
 
-import config from '../src/config'
+const {
+  config
+} = nuxtConfig;
+
 let googleAnalyticsId
 if ('googleAnalyticsId' in config) googleAnalyticsId = config.googleAnalyticsId
 

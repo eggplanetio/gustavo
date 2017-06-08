@@ -1,11 +1,12 @@
-import webpack from 'webpack'
-import gustavoConfig from './src/config'
+const webpack = require('webpack')
+const gustavoConfig = require('./gustavo.config')
 
 module.exports = {
   env: {
     runningPort: process.env.PORT || 3000
   },
   build: {
+    vendor: ['axios'],
     plugins: [
       new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/)
     ]
@@ -18,7 +19,7 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ]
   },
   /*
@@ -31,6 +32,11 @@ module.exports = {
   loading: {
     color: gustavoConfig.loadingColor || 'black'
   },
+  modules: [
+    '@nuxtjs/optimize',
+    '@nuxtjs/offline',
+    '@nuxtjs/manifest'
+  ],
   plugins: [
     // '~plugins/vue-hljs',
     '~plugins/ga',
@@ -39,5 +45,6 @@ module.exports = {
   ],
   router: {
     middleware: 'hide-nav'
-  }
+  },
+  gustavo: gustavoConfig
 }

@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import store from '~store'
 import { mapState } from 'vuex'
 import HeaderLink from '~/components/site/HeaderLink'
 
@@ -24,7 +23,7 @@ export default {
   props: [ 'hidden' ],
   methods: {
     toggle () {
-      store.commit('TOGGLE_NAV')
+      this.$store.commit('TOGGLE_NAV')
     }
   },
   components: { HeaderLink },
