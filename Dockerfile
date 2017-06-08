@@ -1,4 +1,4 @@
-FROM node:7-alpine
+FROM node:8-alpine
 MAINTAINER briangonzalez
 
 ENV NODE_ENV production

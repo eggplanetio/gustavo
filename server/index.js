@@ -2,50 +2,38 @@ import Nuxt from 'nuxt'
 import express from 'express'
 import api from './api'
 import morgan from 'morgan'
-import compression from 'compression'
 import config from '../nuxt.config.js'
-import gustavoConfig from '../src/config'
 import apicache from 'apicache'
+
+config.dev = !(process.env.NODE_ENV === 'production')
 
 const app = express()
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3000
+
 const cache = apicache.middleware
-const cacheDuration = gustavoConfig.cacheDuration || '30 minutes'
-
-// Caching.
-app.get('/cache/index', (req, res) => {
-  res.json(apicache.getIndex())
+const cacheDuration = config.gustavo.cacheDuration || '30 minutes'
+apicache.options({
+  enabled: !config.dev
 })
 
-app.get('/cache/clear/:target?', (req, res) => {
-  res.json(apicache.clear(req.params.target))
-})
+const shouldCache = req =>
+  !req.path.startsWith('/_nuxt') &&
+  !req.path.startsWith('/__webpack') &&
+  !req.path.startsWith('/api')
 
-app.use(cache(cacheDuration))
+app.use(cache(cacheDuration, shouldCache))
+app.use(morgan('tiny'))
+
+app.use('/favicon.ico', (req, res) => res.end())
 app.set('port', port)
 app.use('/api', api)
 
-// Import and Set Nuxt.js options.
-config.dev = !(process.env.NODE_ENV === 'production')
-
-// Init Nuxt.js.
-const nuxt = new Nuxt(config)
-app.use(nuxt.render)
-
-// Build only in production mode.
-if (!config.dev) {
-  nuxt.build()
-    .catch((error) => {
-      console.error(error) // eslint-disable-line no-console
-      process.exit(1)
-    })
-
-  // Logging and compression in production.
-  app.use(compression)
-  app.use(morgan('tiny'))
+function start () {
+  const nuxt = new Nuxt(config)
+  app.use(nuxt.render)
+  app.listen(port, host)
+  console.log(`Server listening on ${host}:${port}`) // eslint-disable-line no-console
 }
 
-// Listen.
-app.listen(port, host)
-console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
+start()

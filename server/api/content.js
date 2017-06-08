@@ -1,10 +1,10 @@
 import express from 'express'
 import requestProxy from 'express-request-proxy'
-import config from '../../src/config'
+import config from '../../nuxt.config.js'
 
 const router = express.Router()
-const githubToken = config.githubToken || process.env.GITHUB_TOKEN
-const gistId = config.gistId || process.env.GIST_ID
+const githubToken = config.gustavo.githubToken || process.env.GITHUB_TOKEN
+const gistId = config.gustavo.gistId || process.env.GIST_ID
 
 const opts = {
   url: `https://api.github.com/gists/${gistId}`
