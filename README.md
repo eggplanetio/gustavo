@@ -53,7 +53,6 @@ module.exports = {
   title: 'My gustavo blog',
   gistId: '<< gist id >>',
   githubToken: '<< token >>', /* optional, recommended */
-  cacheDuration: '30 minutes', /* optional */
   googleAnalyticsId: 'UA-X-XXXXX'
 }
 ```
