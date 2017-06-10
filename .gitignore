@@ -14,3 +14,7 @@ build
 # gustavo config
 gustavo.config.js
 dummy/gustavo.config.js
+
+# @nuxt/workbox
+static/sw.js
+static/workbox-sw*.js
