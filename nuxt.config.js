@@ -34,12 +34,7 @@ module.exports = {
   },
   modules: [
     '@nuxtjs/workbox',
-    {
-      src: '@nuxtjs/google-analytics',
-      options: {
-        ua: gustavoConfig.googleAnalyticsId
-      }
-    }
+    ['@nuxtjs/google-analytics', { ua: gustavoConfig.googleAnalyticsId }]
   ],
   plugins: [
     // '~plugins/vue-hljs',
