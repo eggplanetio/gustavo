@@ -33,9 +33,7 @@ module.exports = {
     color: gustavoConfig.loadingColor || 'black'
   },
   modules: [
-    '@nuxtjs/optimize',
-    '@nuxtjs/offline',
-    '@nuxtjs/manifest',
+    '@nuxtjs/workbox',
     {
       src: '@nuxtjs/google-analytics',
       options: {
