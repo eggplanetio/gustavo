@@ -35,11 +35,16 @@ module.exports = {
   modules: [
     '@nuxtjs/optimize',
     '@nuxtjs/offline',
-    '@nuxtjs/manifest'
+    '@nuxtjs/manifest',
+    {
+      src: '@nuxtjs/google-analytics',
+      options: {
+        ua: gustavoConfig.googleAnalyticsId
+      }
+    }
   ],
   plugins: [
     // '~plugins/vue-hljs',
-    '~plugins/ga',
     '~plugins/vue-moment',
     '~plugins/to-iso-date'
   ],
