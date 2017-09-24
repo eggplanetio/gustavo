@@ -79,8 +79,8 @@ Your blog will be running at http://localhost:3000
 Deploying gustavo is simple. The recommended method is [Now by Zeit](https://zeit.co/now).
 
 ```bash
-$ now secrets add gustavo-github-token=<TOKEN>
-$ now secrets add gustavo-gist-id=<ID>
+$ now secrets add gustavo-github-token <TOKEN>
+$ now secrets add gustavo-gist-id <ID>
 $ now -e GITHUB_TOKEN=@gustavo-github-token -e GIST_ID=@gustavo-gist-id --docker
 $ now alias my-gustavo-blog-wjdihnxorf.now.sh my-gustavo.blog
 ```
