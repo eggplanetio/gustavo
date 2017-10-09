@@ -96,6 +96,18 @@ $ now alias my-gustavo-blog-wjdihnxorf.now.sh my-gustavo.blog
 ### Releasing a new image
 
 ```bash
-$ docker build -t eggplanet/gustavo .
-$ docker push eggplanet/gustavo
+$ docker build -t eggplanet/gustavo:latest .
+$ docker push eggplanet/gustavo:latest
 ```
+
+### Changelog
+
+_2.0.0_
+
+- Better caching using [aipcache](https://github.com/kwhitley/apicache)
+- Cleaned up a bunch of dead code
+- nuxt@^1.0.0-rc11
+
+_1.0.0_
+
+- Initial release.

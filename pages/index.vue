@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import PostItem from '~components/posts/Item.vue'
+import PostItem from '@/components/posts/Item.vue'
 import { mapState } from 'vuex'
 
 export default {

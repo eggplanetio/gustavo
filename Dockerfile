@@ -1,5 +1,5 @@
 FROM node:8-alpine
-MAINTAINER briangonzalez
+LABEL maintainer="me@briangonzalez.org"
 
 ENV NODE_ENV production
 
@@ -8,7 +8,7 @@ RUN mkdir -p /app
 COPY package.json /app/package.json
 
 WORKDIR /app
-RUN npm install
+RUN npm install --production
 
 # Copy app files & build.
 COPY . /app
@@ -18,3 +18,4 @@ ONBUILD COPY . /app
 EXPOSE 3000
 
 CMD ["npm", "start"]
+

@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/css/_settings.scss";
+@import "../../assets/css/_settings.scss";
 
 .post-item {
   margin-bottom: $size-unit*1.5;

@@ -4,8 +4,6 @@
 </template>
 
 <script>
-// import config from '../../nuxt.config'
-
 export default {
   head: {
     meta: [
