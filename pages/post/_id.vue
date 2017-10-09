@@ -1,16 +1,21 @@
 
 <template lang="html">
   <div class="">
-    <post :post="currentPost" />
+    <BackHome />
+    <Post :post="currentPost" />
   </div>
 </template>
 
 <script>
-import post from '~components/post/Post.vue'
+import Post from '@/components/post/Post.vue'
+import BackHome from '@/components/site/BackHome.vue'
 import { mapState } from 'vuex'
 
 export default {
-  components: { post },
+  components: {
+    BackHome,
+    Post
+  },
 
   async fetch ({ store, params, redirect }) {
     await store.dispatch('FETCH_POST', params.id)

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import postContent from '~components/post/Content.vue'
+import postContent from '@/components/post/Content.vue'
 export default {
   components: { postContent },
   props: [

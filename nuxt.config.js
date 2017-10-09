@@ -33,8 +33,14 @@ module.exports = {
     color: gustavoConfig.loadingColor || 'black'
   },
   modules: [
-    '@nuxtjs/workbox',
-    ['@nuxtjs/google-analytics', { ua: gustavoConfig.googleAnalyticsId }]
+    '@nuxtjs/pwa',
+    '@nuxtjs/component-cache',
+    {
+      src: '@nuxtjs/google-analytics',
+      options: {
+        ua: gustavoConfig.googleAnalyticsId
+      }
+    }
   ],
   plugins: [
     // '~plugins/vue-hljs',

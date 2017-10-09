@@ -18,3 +18,5 @@ dummy/gustavo.config.js
 # @nuxt/workbox
 static/sw.js
 static/workbox-sw*.js
+
+.esm-cache

@@ -4,7 +4,7 @@ const converter = new showdown.Converter({
 })
 
 let Parser
-if (process.SERVER_BUILD) {
+if (typeof DOMParser === 'undefined') {
   Parser = require('xmldom').DOMParser
 } else {
   Parser = DOMParser
@@ -38,17 +38,18 @@ export default {
     }
   },
 
+  parsePost (rawHtml) {
+    return this.parseItem(rawHtml, '.post.md')
+  },
+
+  parsePage (rawHtml) {
+    return this.parseItem(rawHtml, '.page.md')
+  },
+
   parsePosts (files) {
     return files
       .filter(file => file.filename.includes('.post.md'))
       .map(raw => this.parseItem(raw, '.post'))
       .sort((current, other) => new Date(other.meta.date) - new Date(current.meta.date))
-  },
-
-  parsePages (files) {
-    return files
-      .filter(file => file.filename.includes('.page.md'))
-      .map(raw => this.parseItem(raw, '.page'))
   }
-
 }

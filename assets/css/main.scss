@@ -78,6 +78,7 @@ a:hover,
 a:visited,
 a:active {
   color: $color-font;
+  text-decoration: none;
 
   main & {
     border-bottom: 1px solid $color-border;
@@ -114,7 +115,7 @@ pre {
 }
 
 code {
-  font-family: $font-family;
+  font-family: $font-family-code;
 }
 
 h1,

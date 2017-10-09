@@ -5,7 +5,7 @@
 
     <ul v-if="!hidden">
       <li v-for="link in links">
-        <header-link :link="link"/>
+        <nav-link :link="link"/>
       </li>
     </ul>
 
@@ -16,20 +16,48 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import HeaderLink from '~/components/site/HeaderLink'
+import axios from 'axios'
+import { getters } from '~/store'
+import NavLink from '~/components/site/NavLink'
+import uniqBy from 'lodash.uniqby'
 
 export default {
   props: [ 'hidden' ],
+
+  mounted () {
+    axios.get(`${getters.contentUrl()}/links`)
+      .then(response => {
+        const { data: { links } } = response
+
+        // http://stackoverflow.com/questions/9268407/how-to-convert-markdown-style-links-using-regex
+        const linkRe = /\[([^\]]+)\]\(([^)"]+)(?: "([^"]+)")?\)/
+        const createdLinks = links.content
+          .split('\n')
+          .filter(link => link)
+          .map(link => link.match(linkRe))
+          .map(link => {
+            return { href: link[2], text: link[1] }
+          })
+
+        const uniqLinks = uniqBy(createdLinks, link => link.href)
+        this.links = uniqLinks.length > 1 ? uniqLinks : [{
+          text: 'Create links.md in your gist'
+        }]
+      })
+  },
+
+  data: function () {
+    return {
+      links: []
+    }
+  },
+
   methods: {
     toggle () {
       this.$store.commit('TOGGLE_NAV')
     }
   },
-  components: { HeaderLink },
-  computed: {
-    ...mapState([ 'links' ])
-  }
+  components: { NavLink }
 }
 </script>
 
@@ -40,8 +68,9 @@ nav {
   position: fixed;
   top: $size-unit;
   right: $size-unit;
-  text-align: right;
   user-select: none;
+  z-index: 2;
+  text-align: right;
 }
 
 a {
