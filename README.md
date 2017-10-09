@@ -104,10 +104,10 @@ $ docker push eggplanet/gustavo:latest
 
 _2.0.0_
 
-- Better caching using [aipcache](https://github.com/kwhitley/apicache)
+- Better caching using [apicache](https://github.com/kwhitley/apicache)
 - Cleaned up a bunch of dead code
 - nuxt@^1.0.0-rc11
 
 _1.0.0_
 
-- Initial release.
+- Initial release
