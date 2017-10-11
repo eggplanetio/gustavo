@@ -7,7 +7,10 @@ const router = express.Router()
 const gustavoConfig = require(process.cwd() + '/gustavo.config')
 const cacheDuration = gustavoConfig.cacheDuration || '60 minutes'
 
-router.use(apicache.middleware(cacheDuration))
+if (process.env.NODE_ENV === 'development') {
+  router.use(apicache.middleware(cacheDuration))
+}
+
 router.use('/posts/:id', post)
 router.use('/posts', posts)
 router.use('/pages/:id', page)
