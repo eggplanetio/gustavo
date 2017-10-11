@@ -62,11 +62,13 @@ export const posts = proxy(url, Object.assign({}, defaults, {
     const fileNames = Object.keys(files)
     const posts = []
 
-    fileNames.forEach(name => {
-      if (name.endsWith('.post.md')) {
-        posts.push(files[name])
-      }
-    })
+    fileNames
+      .filter(name => !name.endsWith('.draft.post.md'))
+      .forEach(name => {
+        if (name.endsWith('.post.md')) {
+          posts.push(files[name])
+        }
+      })
 
     return JSON.stringify({ posts })
   }
