@@ -10,9 +10,11 @@ $color-gray: #ccc !default;
 $color-light-gray: #f7f7f7 !default;
 $color-dark-gray: #9a9a9a !default;
 $color-dark: black !default;
+$color-yellow: #ffffe1 !default;
 
 $color-background: $color-light;
 $color-font: $color-dark;
 $color-border: $color-gray;
 $color-code: $color-light-gray;
 $color-heading-hash: $color-dark-gray;
+$color-link-background: $color-yellow;

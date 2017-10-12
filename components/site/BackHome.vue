@@ -18,5 +18,6 @@ export default {
   position: absolute;
   top: $size-unit;
   left: $size-unit;
+  background: none;
 }
 </style>

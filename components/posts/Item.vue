@@ -31,6 +31,7 @@ export default {
   a {
     text-decoration: none;
     border: none;
+    background: none;
   }
 
   time {
