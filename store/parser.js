@@ -28,13 +28,17 @@ export default {
     const segment = raw.filename.split(split)[0]
     const path = `/post/${segment}`
     const id = raw.filename.split(split)[0]
-    content = content.replace(/<pre>/g, '<pre v-highlightjs="sourcecode">')
+    content = content.replace(/<pre>/g, '<pre v-highlightjs>')
+
+    const firstSentence = content.slice(3)
+      .split('.')[0] + '.'
 
     return {
       id,
       content,
       path,
-      meta
+      meta,
+      firstSentence
     }
   },
 

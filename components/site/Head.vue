@@ -8,7 +8,9 @@ export default {
   head: {
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'x-ua-compatible', content: 'ie-edge' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+      { name: 'application-name', content: 'Gustavo' },
       { name: 'theme-color', content: 'black' }
     ],
     link: [

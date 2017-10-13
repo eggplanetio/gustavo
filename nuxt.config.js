@@ -16,10 +16,12 @@ module.exports = {
     title: gustavoConfig.title,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      { hid: 'og:title', name: 'og:title', content: gustavoConfig.title },
+      { hid: 'og:description', name: 'og:description', content: gustavoConfig.description || gustavoConfig.title },
+      { hid: 'viewport', name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: gustavoConfig.favciconUrl || '/favicon.png' }
     ]
   },
   /*
@@ -43,7 +45,6 @@ module.exports = {
     }
   ],
   plugins: [
-    // '~plugins/vue-hljs',
     '~plugins/vue-moment',
     '~plugins/to-iso-date'
   ],

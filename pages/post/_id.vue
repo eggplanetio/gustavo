@@ -27,7 +27,15 @@ export default {
 
   head () {
     return {
-      title: this.currentPost.meta.title
+      'title': this.currentPost.meta.title,
+      'og:title': 'foo',
+      meta: [
+        { hid: 'og:title', name: 'og:title', content: this.currentPost.meta.title },
+        { hid: 'og:description', name: 'og:description', content: this.currentPost.meta.description || this.currentPost.firstSentence },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.currentPost.meta.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.currentPost.meta.description || this.currentPost.firstSentence },
+        { hid: 'description', name: 'description', content: this.currentPost.meta.description || this.currentPost.firstSentence }
+      ]
     }
   },
 

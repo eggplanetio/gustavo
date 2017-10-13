@@ -12,7 +12,17 @@
 
 <script>
 import postContent from '@/components/post/Content.vue'
+import * as hljs from 'highlight.js'
+
 export default {
+  mounted () {
+    const pres = [...document.querySelectorAll('pre')];
+    if (typeof hljs === 'object') {
+      pres.forEach(el => {
+        hljs.highlightBlock(el)
+      })
+    }
+  },
   components: { postContent },
   props: [
     'post'

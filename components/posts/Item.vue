@@ -32,6 +32,17 @@ export default {
     text-decoration: none;
     border: none;
     background: none;
+    display: inline-block;
+    transition: all 200ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0px);
+      transition: none;
+    }
   }
 
   time {
