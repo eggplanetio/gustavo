@@ -1,9 +1,11 @@
 language: node_js
+
 node_js:
-  - "7"
-before_install:
-  - npm install -g yarn
-install:
-  - yarn install
+  - "8"
+
+before_install: npm install -g npm@latest
+
+install: npm ci
+
 script:
-  - yarn run lint
+  - npm run lint
