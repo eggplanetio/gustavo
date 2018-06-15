@@ -35,7 +35,7 @@ export default {
   },
 
   mounted () {
-    const pres = [...document.querySelectorAll('pre')];
+    const pres = [...document.querySelectorAll('pre')]
     if (typeof hljs === 'object') {
       pres.forEach(el => {
         hljs.highlightBlock(el)
